@@ -6,8 +6,6 @@ use app\controllers\ContactController;
 use app\controllers\FormationController;
 use app\controllers\HomeController;
 use app\core\Application;
-use app\controllers\SiteController;
-use app\models\User;
 
 require_once __DIR__."/../vendor/autoload.php";
 $dotenv = Dotenv\Dotenv::createImmutable(dirname(__DIR__));
