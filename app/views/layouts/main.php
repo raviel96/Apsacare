@@ -35,7 +35,9 @@
         </div>
         <div class="header-sticky">
             <div class="logo">
-                <img src="" alt="Logo ApsaCare">
+                <a href="/">
+                    <img src="" alt="Logo ApsaCare">
+                </a>
             </div>
             <nav>
                 <ul class="main-nav">
