@@ -50,7 +50,50 @@
     </header>
     {{content}}
     <footer>
-
+        <div class="footer-links">
+            <div class="link-container">
+                <h3 class="link-container-title">A PROPOS</h3>
+                <div class="link-container-content">
+                    <p>APSA CARE</p>
+                    <p>Une association au service de l'inclusion sociale et professionnelle</p>
+                </div>
+            </div>
+            <div class="link-container">
+                <h3 class="link-container-title">CONTACTEZ-NOUS</h3>
+                <div class="link-container-content">
+                    <p>Téléphone : <a href="tel:0590464509">0590 464 509</a></p>
+                    <p>Email : <a href="mailto:contact@apsacare.fr">contact@apsacare.fr</a></p>
+                    <p>Adresse : 41 Rue du Chevalier Vicomte de Bragelogne</p>
+                    <p>Suivez-nous : 
+                        <a href="https://www.instagram.com/paips16.18/">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                    </p>
+                </div>
+            </div>
+            <div class="link-container">
+                <h3 class="link-container-title">NOTRE ACCOMPAGNEMENT</h3>
+                <div class="link-container-content">
+                    <nav>
+                        <ul class="footer-nav">
+                            <li><a href="/accompagnement#individu">L'individu</a></li>
+                            <li><a href="/accompagnement#appui-social">Appui social</a></li>
+                            <li><a href="/accompagnement#appui-professionnel">Appui professionnel</a></li>
+                            <li><a href="/accompagnement#appui-psychologique">Apui psychologique</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="link-container">
+                <h3 class="link-container-title">LIENS RAPIDES</h3>
+                <div class="link-container-content">
+                    <a href="/cgu">Mentions légales</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copy">
+            <p>&copy; 2023 <strong>APSA CARE</strong></p>
+        </div>
     </footer>
 </body>
 </html>

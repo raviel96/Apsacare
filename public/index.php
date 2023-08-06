@@ -2,6 +2,7 @@
 
 use app\controllers\AboutController;
 use app\controllers\AccompaniementController;
+use app\controllers\CguController;
 use app\controllers\ContactController;
 use app\controllers\FormationController;
 use app\controllers\HomeController;
@@ -26,5 +27,6 @@ $app->getRouter()->get("/accompagnement", [AccompaniementController::class, "ind
 $app->getRouter()->get("/formation", [FormationController::class, "index"]);
 $app->getRouter()->get("/a-propos", [AboutController::class, "index"]);
 $app->getRouter()->get("/contact", [ContactController::class, "index"]);
+$app->getRouter()->get("/cgu", [CguController::class, "index"]);
 
 $app->run();
