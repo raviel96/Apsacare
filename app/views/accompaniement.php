@@ -2,5 +2,10 @@
 /** @var \$this app\core\View */
 $this->title = "Accompagnement";
 ?>
-<h1>Notre accompagnement</h1>
+<div class="hero-image">
+    <blockquote class="hero-text">
+        <h1>Ose ta vie.<br>Toi seul la vivra !</h1>
+        <p>- Jacques Salomé</p>
+    </blockquote>
+</div>
 

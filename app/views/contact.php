@@ -2,4 +2,9 @@
 /** @var \$this app\core\View */
 $this->title = "Contact";
 ?>
-<h1>Nous contacter</h1>
+<div class="hero-image">
+    <blockquote class="hero-text">
+        <h1>Peu importe si le début paraît petit.</h1>
+        <p>- Henry David Thoreau</p>
+    </blockquote>
+</div>
