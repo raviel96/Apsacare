@@ -37,7 +37,7 @@
         <div class="header-sticky">
             <div class="logo">
                 <a href="/">
-                    <img src="" alt="Logo ApsaCare">
+                    <img src="/img/logo.jpg" alt="Logo ApsaCare" width="150" height="100">
                 </a>
             </div>
             <nav>
@@ -98,5 +98,6 @@
             <p>&copy; 2023 <strong>APSA CARE</strong></p>
         </div>
     </footer>
+    
 </body>
 </html>
