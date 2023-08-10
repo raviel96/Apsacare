@@ -2,8 +2,8 @@
 /** @var \$this app\core\View */
 $this->title = "Accompagnement";
 ?>
-<div class="hero-image accomp">
-    <blockquote class="hero-text">
+<div class="hero-image accomp center">
+    <blockquote class="hero-text text-center">
         <h1>Ose ta vie.<br>Toi seul la vivra !</h1>
         <p>- Jacques Salomé</p>
     </blockquote>

@@ -237,15 +237,23 @@ h3 {
 /* Reusable components. Nav and Footer end */
 
 /* Hero images start */
-.hero-image.home {
+.hero-image {
     min-height: 20rem;
-    background: no-repeat center/cover url(/img/jeunes-pouces-en-lair.jpeg);
     padding: 0 var(--padding-3);
+    
+}
+.hero-image.home  {
+    background: no-repeat center/cover url(/img/jeunes-pouces-en-lair.jpeg);
+}
+
+.hero-image.accomp {
+    background: no-repeat center/cover url(/img/groupchat.jpeg);
 }
 
 .hero-text {
-    border-top: 2px solid;
-    border-bottom: 2px solid;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
     padding: var(--padding-2);
     font-weight: 700;
+    background-color: rgba(255, 255, 255, 0.3);
 }
