@@ -7,44 +7,41 @@ $this->title = "Accueil";
 <div class="hero-image home center">
     <blockquote class="hero-text text-center">
         <h1>Croyez en vos rêves et ils se réaliseront peut-être.<br>Croyez en vous et ils se réaliseront sûrement.</h1>
-        <p>- Martin Luther King</p>
+        <em>- Martin Luther King</em>
     </blockquote>
 </div>
 <main>
-    <div class="main-container text-center">
-        <div>
-            <!-- Style like h1 -->
-            <h2>L'ACCOMPAGNEMENT <span class="text-highlight">SUR MESURE</span> !</h2>
-        </div>
+    <div class="main-container">
+        <h2 class="slogan text-center">L'ACCOMPAGNEMENT <span class="text-highlight">SUR MESURE</span> !</h2>
         <!-- Vision section start -->
         <section class="section-vision">
-            <header>
-                <h2 class="section-title">Notre <span class="text-highlight">vision</span></h2>
-                <img class="title-bottom" src="img/title-bottom.png" alt="Image décorative" width="50">
-            </header>
             <div class="section-container">
                 <div class="section-image">
                     <img src="img/poigne-de-main.jpg" alt="Une poignée de main" width="100" height="100">
                 </div>
                 <div class="section-content">
+                    <div>
+                        <h2 class="section-title">Notre <span class="text-highlight">vision</span></h2>
+                        <img class="title-bottom" src="img/title-bottom.png" alt="Image décorative" width="50">
+                    </div>
                     <p>L’association a été créée en 2008. En 2009, l’opportunité d’accompagner les bénéficiaires de contrats à durée déterminée d’insertion, salariés d’une structure d’insertion par l’activité économique (SIAE) est arrivée.</p>
                     <p>Depuis, nous avons fait de l’accompagnement social et professionnel notre activité principale.
-                        Notre vision : <strong>Accompagner</strong>, <strong>Challenger</strong>, <strong>Propulser</strong>, <strong>Insérer</strong> !</p>
+                        <br>Notre vision : <br><strong>Accompagner</strong>, <strong>Challenger</strong>, <strong>Propulser</strong>, <strong>Insérer</strong> !</p>
                 </div>
             </div>
         </section>
         <!-- Vision section end -->
         <!-- Expert section start -->
         <section class="section-expert">
-            <header>
-                <h2 class="section-title">Notre <span class="text-highlight">expertise</span></h2>
-                <img class="title-bottom" src="img/title-bottom.png" alt="Image décorative" width="50">
-            </header>
             <div class="section-container">
                 <div class="section-image">
                     <img src="img/board-2.jpg" alt="Femme d'affaire expliquant sur un tableau" width="100" height="100">
                 </div>
                 <div class="section-content">
+                    <div>
+                        <h2 class="section-title">Notre <span class="text-highlight">expertise</span></h2>
+                        <img class="title-bottom" src="img/title-bottom.png" alt="Image décorative" width="50">
+                    </div>
                     <p>L’intervention d’APSA CARE auprès de ses bénéficiaires, se situe au niveau de l’apport d’informations préventives et de la mise en relation avec tous partenaires pouvant aider à la remédiation des problématiques détectées par notre équipe d’experts :</p>
                     <ul>
                         <li>

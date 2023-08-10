@@ -10,7 +10,7 @@ $this->title = "Accompagnement";
     </blockquote>
 </div>
 <main>
-    <div class="main-container">
+    <div class="main-container text-center">
         <div>
             <nav>
                 <ul class="accomp-nav">
@@ -21,9 +21,11 @@ $this->title = "Accompagnement";
                 </ul>
             </nav>
         </div>
-
         <section id="individu">
-            <h2 class="section-title"><span class="text-highlight">L'individu</span> au cœur des dispositifs</h2>
+            <header>
+                <h2 class="section-title"><span class="text-highlight">L'individu</span> au cœur des dispositifs</h2>
+                <img class="title-bottom" src="img/title-bottom.png" alt="Image décorative" width="50">
+            </header>
             <div class="expandable-card">
                 <div class="card-image">
                     <img src="img/individus.jpg" alt="">
@@ -46,7 +48,10 @@ $this->title = "Accompagnement";
             </div>
         </section>
         <section id="appui-social">
-            <h2 class="section-title">L'accompagnement <span class="text-highlight">social</span></h2>
+            <header>
+                <h2 class="section-title">L'accompagnement <span class="text-highlight">social</span></h2>
+                <img class="title-bottom" src="img/title-bottom.png" alt="Image décorative" width="50">
+            </header>
             <div class="expandable-card">
                 <div class="card-image">
                     <img src="img/appui-soc.jpg" alt="">
@@ -59,7 +64,10 @@ $this->title = "Accompagnement";
             </div>
         </section>
         <section id="appui-professionnel">
-            <h2 class="section-title">L'accompagnement <span class="text-highlight">professionnel</span></h2>
+            <header>
+                <h2 class="section-title">L'accompagnement <span class="text-highlight">professionnel</span></h2>
+                <img class="title-bottom" src="img/title-bottom.png" alt="Image décorative" width="50">
+            </header>
             <div class="expandable-card">
                 <div class="card-image">
                     <img src="img/appui-pro.jpg" alt="">
@@ -76,7 +84,10 @@ $this->title = "Accompagnement";
             </div>
         </section>
         <section id="appui-psychologique">
-            <h2 class="section-title">L'accompagnement <span class="text-highlight">psychologique</span></h2>
+            <header>
+                <h2 class="section-title">L'accompagnement <span class="text-highlight">psychologique</span></h2>
+                <img class="title-bottom" src="img/title-bottom.png" alt="Image décorative" width="50">
+            </header>
             <div class="expandable-card">
                 <div class="card-image">
                     <img src="img/appui-psy.jpg" alt="">

@@ -6,7 +6,7 @@
     --clr-primary: #9BB43C;
     --clr-secondary:#3C8BBF;
     --clr-accent-primary: #306f99;
-    --clr-light: #fffbf6;
+    --clr-light: rgba(255,255,255, 0.9);
     --clr-dark: #222;
 
     --fs-h1: 1.8rem;
@@ -19,14 +19,17 @@
     --fs-700: 1.375rem;
     --fs-800: 1.5rem;
 
-    --border-radius : 15px;
+    --border-radius : 12px;
     
     --padding-1: .5rem;
     --padding-2: 1rem;
     --padding-3: 1.5rem;
+    --padding-4: 2rem;
+
     --margin-1: .5rem;
     --margin-2: 1rem;
     --margin-3: 1.5rem;
+    --margin-4: 2rem;
 
     --main-container-margin: 3rem;
 
@@ -59,13 +62,6 @@ h3 {
 
 h1, h2, h3 {
     font-weight: 700;
-}
-
-section h2 {
-}
-
-section h2::after {
-    
 }
 
 /* Utilities start*/
@@ -274,15 +270,22 @@ section h2::after {
     margin: var(--main-container-margin);
 }
 
+.main-container section {
+    margin-top: var(--margin-4);
+}
+
+.slogan {
+    font-size: var(--fs-h1);
+}
+
 .section-title {
     position: relative;
     text-transform: uppercase;
-    margin-top: var(--margin-2);
     margin-bottom: var(--margin-1);
 }
 
 .title-bottom {
-    max-width: 200px !important;
+    max-width: 150px !important;
     display: inline;
     height: 15px;
     vertical-align: middle;
@@ -291,11 +294,18 @@ section h2::after {
 
 .section-container {
     margin-top: var(--margin-2);
+    border-radius: var(--border-radius);
+    box-shadow: 0 0 3px;
 }
 
 .section-image img{
-    border-radius: var(--border-radius);
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
     min-height: 15rem;
+}
+
+.section-content {
+    padding: var(--padding-3);
 }
 
 /* Main container end */
