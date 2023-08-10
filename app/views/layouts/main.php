@@ -6,12 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ApsaCare - <?php echo $this->title ?></title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <a class="scroll-to-top" href=""><i class="fa-solid fa-angle-up"></i></a>
+    <a class="scroll-to-top center"><i class="fa-solid fa-angle-up"></i></a>
     <header>
-        <div class="header-contact">
-            <div class="social">
+        <div class="header-contact center text-center">
+            <div class="social center">
                 <p>Suivez-nous :</p>
                 <a href="https://www.instagram.com/paips16.18/">
                     <i class="fa-brands fa-instagram"></i>
@@ -35,25 +36,33 @@
             </nav>
         </div>
         <div class="header-sticky">
-            <div class="logo">
+            <div class="logo center">
                 <a href="/">
                     <img src="/img/logo.jpg" alt="Logo ApsaCare" width="150" height="100">
                 </a>
             </div>
-            <nav>
-                <ul class="main-nav">
-                    <li><a href="/">Accueil</a></li>
-                    <li><a href="/accompagnement">Notre accompagnement</a></li>
-                    <li><a href="/formation">Nos formations</a></li>
-                    <li><a href="/a-propos">Nous connaître</a></li>
-                    <li><a href="/contact">Nous contacter</a></li>
-                </ul>
-            </nav>
+            <div class="menu center text-center">
+                <div class="menu-container">
+                    <div class="mobile-menu center">
+                        <p>Menu</p>
+                        <i class="fa-solid fa-bars"></i>   
+                    </div>
+                    <nav>
+                        <ul class="main-nav center">
+                            <li><a href="/">Accueil</a></li>
+                            <li><a href="/accompagnement">Notre accompagnement</a></li>
+                            <li><a href="/formation">Nos formations</a></li>
+                            <li><a href="/a-propos">Nous connaître</a></li>
+                            <li><a href="/contact">Nous contacter</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
         </div>
     </header>
     {{content}}
     <footer>
-        <div class="footer-links">
+        <div class="footer-container">
             <div class="link-container">
                 <h3 class="link-container-title">A PROPOS</h3>
                 <div class="link-container-content">
@@ -94,10 +103,10 @@
                 </div>
             </div>
         </div>
-        <div class="footer-copy">
+        <div class="footer-copy text-center">
             <p>&copy; 2023 <strong>APSA CARE</strong></p>
         </div>
     </footer>
-    
+    <script  src="/js/script.js"></script>
 </body>
 </html>

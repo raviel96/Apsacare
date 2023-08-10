@@ -4,8 +4,8 @@
 $this->title = "Accueil";
 ?>
 <!-- Todo : add backgroud image -->
-<div class="hero-image home">
-    <blockquote class="hero-text">
+<div class="hero-image home center">
+    <blockquote class="hero-text text-center">
         <h1>Croyez en vos rêves et ils se réaliseront peut-être.<br>Croyez en vous et ils se réaliseront sûrement.</h1>
         <p>- Martin Luther King</p>
     </blockquote>
