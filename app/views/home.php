@@ -88,53 +88,41 @@ $this->title = "Accueil";
                 <h2 class="section-title">Nos <span class="text-highlight">domaines</span> d'intervention</h2>
                 <img class="title-bottom" src="img/title-bottom.png" alt="Image décorative" width="50">
             </header>
-            <div class="section-container">
+            <div class="section-container card-container">
                 <div class="card">
-                    <div class="card-image">
-                        <img src="img/social.svg" alt="Icone groupe social" width="100" height="100">
-                    </div>
+                    <img src="img/social.svg" alt="Icone groupe social" width="100" height="100">
                     <div class="card-content">
-                        <p>Accompagnement social</p>
+                        <p><strong>Accompagnement social</strong></p>
                     </div>
                 </div>
                 <div class="card">
-                    <div class="card-image">
-                        <img src="img/socio-pro.svg" alt="" width="100" height="100">
-                    </div>
+                    <img src="img/socio-pro.svg" alt="Icone d'un personnage à cravate" width="100" height="100">
                     <div class="card-content">
-                        <p>Accompagnement socio-professionnel</p>
+                        <p><strong>Accompagnement socio-professionnel</strong></p>
                     </div>
                 </div>
                 <div class="card">
-                    <div class="card-image">
-                        <img src="img/job-search.svg" alt="Icone recherche d'emploi" width="100" height="100">
-                    </div>
+                    <img src="img/job-search.svg" alt="Icone recherche d'emploi" width="100" height="100">
                     <div class="card-content">
-                        <p>Aide à l’insertion et accompagnement à la recherche d’emploi, de formation</p>
+                        <p><strong>Aide à l’insertion et accompagnement à la recherche d’emploi, de formation</strong></p>
                     </div>
                 </div>
                 <div class="card">
-                    <div class="card-image">
-                        <img src="img/psychology.svg" alt="" width="100" height="100">
-                    </div>
+                    <img src="img/psychology.svg" alt="Icone montrant l'intelligence" width="100" height="100">
                     <div class="card-content">
-                        <p>Accompagnement psychologique</p>
+                        <p><strong>Accompagnement psychologique</strong></p>
                     </div>
                 </div>
                 <div class="card">
-                    <div class="card-image">
-                        <img src="img/vae.svg" alt="" width="100" height="100">
-                    </div>
+                    <img src="img/vae.svg" alt="Icone d'un diplôme" width="100" height="100">
                     <div class="card-content">
-                        <p>Accompagnement à la VAE</p>
+                        <p><strong>Accompagnement à la VAE</strong></p>
                     </div>
                 </div>
                 <div class="card">
-                    <div class="card-image">
-                        <img src="img/company.svg" alt="" width="100" height="100">
-                    </div>
+                    <img src="img/company.svg" alt="Icon d'une entreprise et deux petits personnages" width="100" height="100">
                     <div class="card-content">
-                        <p>Accompagnement à la Création d’entreprise</p>
+                        <p><strong>Accompagnement à la Création d’entreprise</strong></p>
                     </div>
                 </div>
             </div>
@@ -147,17 +135,22 @@ $this->title = "Accueil";
                 <img class="title-bottom" src="img/title-bottom.png" alt="Image décorative" width="50">
             </header>
             <div class="section-container">
-                <ul>
-                    <li>
-                        <p>Le développement de parcours d’accompagnement socio-professionnel.</p>
-                    </li>
-                    <li>
-                        <p>L’accompagnement psycho socioprofessionnel des salariés de structures d’insertion par l’activité économique.</p>
-                    </li>
-                    <li>
-                        <p>L’accompagnement psycho socioprofessionnel des jeunes entre 16 et 18 ans.</p>
-                    </li>
-                </ul>
+                <div class="section-content">
+                    <ul class="fa-ul">
+                        <li>
+                            <span class="fa-li"><i class="fa-solid fa-circle-right"></i></span>
+                            <p>Le développement de parcours d’accompagnement socio-professionnel.</p>
+                        </li>
+                        <li>
+                            <span class="fa-li"><i class="fa-solid fa-circle-right"></i></span>
+                            <p>L’accompagnement psycho socioprofessionnel des salariés de structures d’insertion par l’activité économique.</p>
+                        </li>
+                        <li>
+                            <span class="fa-li"><i class="fa-solid fa-circle-right"></i></span>
+                            <p>L’accompagnement psycho socioprofessionnel des jeunes entre 16 et 18 ans.</p>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </section>
         <!-- Mission section end -->
@@ -168,17 +161,16 @@ $this->title = "Accueil";
                 <img class="title-bottom" src="img/title-bottom.png" alt="Image décorative" width="50">
             </header>
             <div class="section-container">
-                <div class="section-content">
-                    <p>APSA CARE travaille en collaboration avec un riche éventail de partenaires variés et diversifiés afin de pouvoir répondre au mieux aux problématiques des bénéficiaires.<br>Parmi nos principaux partenaires : </p>
-                    <ul class="partner-list">
-                        <li class="card"><img src="img/allocation.svg" alt="Logo de l'allocation familiale Guadeloupe" width="100" height="100"></li>
-                        <li class="card"><img src="img/securite-sociale.svg" alt="Logo de la sécurité sociale Guadeloupe" width="100" height="100"></li>
-                        <li class="card"><img src="img/pole-emploi.svg" alt="Logo de Pôle Emploi" width="100" height="100"></li>
-                        <li class="card"><img src="img/cap-emploi.svg" alt="Logo de Cap Emploi Guadeloupe" width="100" height="100"></li>
-                        <li class="card"><img src="img/prefet.svg" alt="Logo de la préfecture Guadeloupe" width="100" height="100"></li>
-                        <li class="card"><img src="img/banque-alimentaire.svg" alt="Logo de la banque alimentaire Guadeloupe" width="100" height="100"></li>
-                    </ul>
-                </div>
+                <p>APSA CARE travaille en collaboration avec un riche éventail de partenaires variés et diversifiés afin de pouvoir répondre au mieux aux problématiques des bénéficiaires.</p>
+                <p class="margin-top-2">Parmi nos principaux partenaires :</p>
+                <ul class="partner-list">
+                    <li class="card"><img src="img/allocation.svg" alt="Logo de l'allocation familiale Guadeloupe" width="100" height="100"></li>
+                    <li class="card"><img src="img/securite-sociale.svg" alt="Logo de la sécurité sociale Guadeloupe" width="100" height="100"></li>
+                    <li class="card"><img src="img/pole-emploi.svg" alt="Logo de Pôle Emploi" width="100" height="100"></li>
+                    <li class="card"><img src="img/cap-emploi.svg" alt="Logo de Cap Emploi Guadeloupe" width="100" height="100"></li>
+                    <li class="card"><img src="img/prefet.svg" alt="Logo de la préfecture Guadeloupe" width="100" height="100"></li>
+                    <li class="card"><img src="img/banque-alimentaire.svg" alt="Logo de la banque alimentaire Guadeloupe" width="100" height="100"></li>
+                </ul>
             </div>
         </section>
     </div>

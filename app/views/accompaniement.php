@@ -35,7 +35,7 @@ $this->title = "Accompagnement";
                     <ul>
                         <li>
                             <p>d’un contrat à durée déterminée d’insertion signé avec une entreprise d’insertion. Pour y accéder, rapprochez-vous de votre conseiller Pôle Emploi qui étudiera votre profil et vous indiquera si vous êtes éligible.
-                                Vous pouvez y accéder dès l’âge de 18 ans. </p>
+                            Vous pouvez y accéder dès l’âge de 18 ans. </p>
                         </li>
                         <li>
                             <p>d’un parcours d’accompagnement d’insertion professionnelle et sociale, initié par la DEETS Guadeloupe, en collaboration avec la Mission Locale et le Rectorat.
