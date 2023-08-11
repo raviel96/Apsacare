@@ -26,8 +26,9 @@ $this->title = "Accueil";
                     </div>
                     <p>L’association a été créée en 2008. En 2009, l’opportunité d’accompagner les bénéficiaires de contrats à durée déterminée d’insertion, salariés d’une structure d’insertion par l’activité économique (SIAE) est arrivée.</p>
                     <p>Depuis, nous avons fait de l’accompagnement social et professionnel notre activité principale.
-                        <br>Notre vision : <br><strong>Accompagner</strong>, <strong>Challenger</strong>, <strong>Propulser</strong>, <strong>Insérer</strong> !</p>
+                    <br>Notre vision : <br><strong>Accompagner</strong>, <strong>Challenger</strong>, <strong>Propulser</strong>, <strong>Insérer</strong> !</p>
                 </div>
+                <button class="read-more"></button>
             </div>
         </section>
         <!-- Vision section end -->
@@ -58,6 +59,7 @@ $this->title = "Accueil";
                         </li>
                     </ul>
                 </div>
+                <button class="read-more"></button>
             </div>
         </section>
         <!-- Expert section end -->
@@ -149,15 +151,15 @@ $this->title = "Accueil";
             <div class="section-container">
                 <div class="section-content">
                     <p>APSA CARE travaille en collaboration avec un riche éventail de partenaires variés et diversifiés afin de pouvoir répondre au mieux aux problématiques des bénéficiaires.<br>Parmi nos principaux partenaires : </p>
+                    <ul class="partner-list">
+                        <li class="card"><img src="img/allocation.svg" alt="Logo de l'allocation familiale Guadeloupe" width="100" height="100"></li>
+                        <li class="card"><img src="img/securite-sociale.svg" alt="Logo de la sécurité sociale Guadeloupe" width="100" height="100"></li>
+                        <li class="card"><img src="img/pole-emploi.svg" alt="Logo de Pôle Emploi" width="100" height="100"></li>
+                        <li class="card"><img src="img/cap-emploi.svg" alt="Logo de Cap Emploi Guadeloupe" width="100" height="100"></li>
+                        <li class="card"><img src="img/prefet.svg" alt="Logo de la préfecture Guadeloupe" width="100" height="100"></li>
+                        <li class="card"><img src="img/banque-alimentaire.svg" alt="Logo de la banque alimentaire Guadeloupe" width="100" height="100"></li>
+                    </ul>
                 </div>
-                <ul class="partner-list">
-                    <li class="card"><img src="img/allocation.svg" alt="Logo de l'allocation familiale Guadeloupe" width="100" height="100"></li>
-                    <li class="card"><img src="img/securite-sociale.svg" alt="Logo de la sécurité sociale Guadeloupe" width="100" height="100"></li>
-                    <li class="card"><img src="img/pole-emploi.svg" alt="Logo de Pôle Emploi" width="100" height="100"></li>
-                    <li class="card"><img src="img/cap-emploi.svg" alt="Logo de Cap Emploi Guadeloupe" width="100" height="100"></li>
-                    <li class="card"><img src="img/prefet.svg" alt="Logo de la préfecture Guadeloupe" width="100" height="100"></li>
-                    <li class="card"><img src="img/banque-alimentaire.svg" alt="Logo de la banque alimentaire Guadeloupe" width="100" height="100"></li>
-                </ul>
             </div>
         </section>
     </div>

@@ -305,7 +305,59 @@ h1, h2, h3 {
 }
 
 .section-content {
-    padding: var(--padding-3);
+    margin: var(--margin-3);
+}
+
+.section-vision .section-content, .section-expert .section-content {
+    position: relative;
+    max-height: 13rem;
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+.section-vision .section-content::before, .section-expert .section-content::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background : linear-gradient(transparent, #fff);
+}
+
+.section-container .read-more {
+    position: relative;
+    padding: var(--padding-1);
+    margin: 0 var(--margin-3)  var(--margin-3) var(--margin-3);
+    background-color: var(--clr-secondary);
+    color: var(--clr-light);
+    font-weight: 600;
+    transition: 0.5s;
+    border: 0;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+}
+
+.section-container .read-more:hover {
+    letter-spacing: 1px;
+    background-color: var(--clr-primary);
+}
+
+.section-container .read-more::before {
+    content: "Lire plus";
+    
+}
+
+.section-container.active .read-more::before {
+    content: "Lire moins";
+}
+
+.section-container.active .section-content {
+    max-height: 30rem;
+}
+
+.section-container.active .section-content::before {
+    display: none;
 }
 
 /* Main container end */
