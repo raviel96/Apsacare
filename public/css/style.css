@@ -1,5 +1,6 @@
 @import url("reset.css");
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css");
 
 
 :root {
@@ -81,6 +82,10 @@ h1, h2, h3 {
 
 .text-highlight {
     color: var(--clr-primary);
+}
+
+.margin-top-2 {
+    margin-top: var(--margin-2);
 }
 /* Utilities end */
 
@@ -298,33 +303,6 @@ h1, h2, h3 {
     box-shadow: 0 0 3px;
 }
 
-.section-image img{
-    border-top-left-radius: var(--border-radius);
-    border-top-right-radius: var(--border-radius);
-    min-height: 15rem;
-}
-
-.section-content {
-    margin: var(--margin-3);
-}
-
-.section-vision .section-content, .section-expert .section-content {
-    position: relative;
-    max-height: 13rem;
-    overflow: hidden;
-    transition: 0.5s;
-}
-
-.section-vision .section-content::before, .section-expert .section-content::before {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100px;
-    background : linear-gradient(transparent, #fff);
-}
-
 .section-container .read-more {
     position: relative;
     padding: var(--padding-1);
@@ -353,11 +331,59 @@ h1, h2, h3 {
 }
 
 .section-container.active .section-content {
-    max-height: 30rem;
+    max-height: 50rem;
 }
 
 .section-container.active .section-content::before {
     display: none;
 }
+
+.section-image img{
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
+    min-height: 15rem;
+}
+
+.section-content {
+    margin: var(--margin-3);
+}
+
+.section-vision .section-content, .section-expert .section-content {
+    position: relative;
+    max-height: 13rem;
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+.section-vision .section-content::before, .section-expert .section-content::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background : linear-gradient(transparent, #fff);
+}
+
+.section-vision .section-content .fa-ul,
+.section-expert .section-content .fa-ul {
+    margin-left: var(--margin-4);
+}
+
+.section-vision .section-content li .fa-circle-right,
+.section-expert .section-content li .fa-circle-right {
+    font-size: 20px;
+    color: var(--clr-primary);
+    vertical-align: center;
+}
+
+.section-vision .section-content li,
+.section-expert .section-content li {
+    color: var(--clr-light);
+    font-weight: 700;
+    padding: var(--padding-1);
+    background-color: var(--clr-primary);
+    border-radius: var(--border-radius);
+    margin-top: var(--margin-2);
 
 /* Main container end */

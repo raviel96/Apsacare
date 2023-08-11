@@ -25,8 +25,26 @@ $this->title = "Accueil";
                         <img class="title-bottom" src="img/title-bottom.png" alt="Image décorative" width="50">
                     </div>
                     <p>L’association a été créée en 2008. En 2009, l’opportunité d’accompagner les bénéficiaires de contrats à durée déterminée d’insertion, salariés d’une structure d’insertion par l’activité économique (SIAE) est arrivée.</p>
-                    <p>Depuis, nous avons fait de l’accompagnement social et professionnel notre activité principale.
-                    <br>Notre vision : <br><strong>Accompagner</strong>, <strong>Challenger</strong>, <strong>Propulser</strong>, <strong>Insérer</strong> !</p>
+                    <p class="margin-top-2">Depuis, nous avons fait de l’accompagnement social et professionnel notre activité principale.<br>
+                    <p class="margin-top-2">Notre vision :</p>
+                    <ul class="fa-ul">
+                        <li>
+                            <span class="fa-li"><i class="fa-solid fa-circle-right"></i></span>
+                            <p><strong>Accompagner</strong></p>
+                        </li>
+                        <li>
+                            <span class="fa-li"><i class="fa-solid fa-circle-right"></i></span>
+                            <p><strong>Challenger</strong></p>
+                        </li>
+                        <li>
+                            <span class="fa-li"><i class="fa-solid fa-circle-right"></i></span>
+                            <p><strong>Propulser</strong></p>
+                        </li>
+                        <li>
+                            <span class="fa-li"><i class="fa-solid fa-circle-right"></i></span>
+                            <p><strong>Insérer</strong></p></p>
+                        </li>
+                    </ul> 
                 </div>
                 <button class="read-more"></button>
             </div>
@@ -44,20 +62,21 @@ $this->title = "Accueil";
                         <img class="title-bottom" src="img/title-bottom.png" alt="Image décorative" width="50">
                     </div>
                     <p>L’intervention d’APSA CARE auprès de ses bénéficiaires, se situe au niveau de l’apport d’informations préventives et de la mise en relation avec tous partenaires pouvant aider à la remédiation des problématiques détectées par notre équipe d’experts :</p>
-                    <ul>
+                    <ul class="fa-ul">
                         <li>
+                            <span class="fa-li"><i class="fa-solid fa-circle-right"></i></span>    
                             <p>Une ancienne formatrice AFPA, actrice de la formation professionnelle d’adultes depuis 1992.</p>
                         </li>
                         <li>
+                            <span class="fa-li"><i class="fa-solid fa-circle-right"></i></span>
                             <p>Une assistante sociale, intégrée dans l’équipe d’accompagnement.</p>
                         </li>
                         <li>
+                            <span class="fa-li"><i class="fa-solid fa-circle-right"></i></span>
                             <p>2 psychologues cliniciennes qui détectent d’éventuelles problématiques psychiques et cognitives.</p>
                         </li>
-                        <li>
-                            <p>Enfin, nous mobilisons notre réseau pour répondre aux besoins de nos bénéficiaires.</p>
-                        </li>
                     </ul>
+                    <p class="margin-top-2">Enfin, nous mobilisons notre réseau pour répondre aux besoins de nos bénéficiaires.</p>
                 </div>
                 <button class="read-more"></button>
             </div>
