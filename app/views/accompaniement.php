@@ -12,7 +12,7 @@ $this->title = "Accompagnement";
 <main>
     <div class="main-container">
         <nav>
-            <ul class="accomp-nav center text-center">
+            <ul class="accomp-nav text-center">
                 <li><a href="#individu">L'individu</a></li>
                 <li><a href="#appui-social">Appui social</a></li>
                 <li><a href="#appui-professionnel">Appui professionel</a></li>
@@ -22,7 +22,7 @@ $this->title = "Accompagnement";
         <section id="individu">
             <div class="expandable-card">
                 <div class="card-image">
-                    <img src="img/individus.jpg" alt="">
+                    <img src="img/individus.jpg" alt="Jeunes en train de travailler ensemble">
                 </div>
                 <div class="card-content">
                     <div>
@@ -68,7 +68,7 @@ $this->title = "Accompagnement";
         <section id="appui-professionnel">
             <div class="expandable-card">
                 <div class="card-image">
-                    <img src="img/appui-pro.jpg" alt="">
+                    <img src="img/appui-pro.jpg" alt="Un homme et une femme d'affaire discutant">
                 </div>
                 <div class="card-content">
                     <div>
@@ -89,7 +89,7 @@ $this->title = "Accompagnement";
         <section id="appui-psychologique">
             <div class="expandable-card">
                 <div class="card-image">
-                    <img src="img/appui-psy.jpg" alt="">
+                    <img src="img/appui-psy.jpg" alt="Image de pierres entassés près de la mer">
                 </div>
                 <div class="card-content">
                     <div>

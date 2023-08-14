@@ -1,10 +1,16 @@
+const currentLocation = location.href;
+
 const scrollToTop = document.querySelector(".scroll-to-top");
+const headerSticky = document.querySelector(".header-sticky");
 const hamburgerBars =  document.querySelector(".fa-bars");
 const mobileNav = document.querySelector(".main-nav");
-const readMore = document.querySelectorAll(".read-more");
+const readMoreButtons = document.querySelectorAll(".read-more");
+const navigationLinks = document.querySelectorAll(".main-nav a");
+
 
 window.addEventListener("scroll", () => {
     scrollToTop.classList.toggle("active", window.scrollY > 500);
+    headerSticky.classList.toggle("fixed", window.scrollY > 110);
 });
 
 scrollToTop.addEventListener("click", () => {
@@ -21,9 +27,15 @@ hamburgerBars.addEventListener("click", () => {
 
 });
 
-for(let i = 0; i < readMore.length; i++ ) {
-    readMore[i].addEventListener("click", () => {
-        readMore[i].parentNode.classList.toggle("active");
+readMoreButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+        button.parentNode.classList.toggle("active");
     }); 
-}
+});
+
+navigationLinks.forEach((link) => {
+    if(link.href === currentLocation) {
+        link.classList.toggle("current");
+    }
+});
 
