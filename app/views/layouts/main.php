@@ -42,7 +42,7 @@
             <div class="header-sticky">
                 <div class="logo center">
                     <a href="/">
-                        <img src="/img/logo.jpg" alt="Logo ApsaCare" width="150" height="100">
+                        <img src="/img/logo.png" alt="Logo ApsaCare" width="150" height="100">
                     </a>
                 </div>
                 <div class="menu center text-center">
