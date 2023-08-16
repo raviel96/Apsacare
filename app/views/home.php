@@ -17,9 +17,9 @@ $this->title = "Accueil";
         <section class="section-vision">
             <div class="section-container">
                 <div class="section-image">
-                    <img src="img/poigne-de-main.jpg" alt="Une poignée de main" width="100" height="100">
+                    <img class="slide-in slide-left" src="img/poigne-de-main.jpg" alt="Une poignée de main" width="100" height="100">
                 </div>
-                <div class="section-content">
+                <div class="section-content slide-in slide-right">
                     <div>
                         <h2 class="section-title">Notre <span class="text-highlight">vision</span></h2>
                         <img class="title-bottom" src="img/title-bottom.png" alt="Image décorative" width="50">
@@ -54,9 +54,9 @@ $this->title = "Accueil";
         <section class="section-expert">
             <div class="section-container">
                 <div class="section-image">
-                    <img src="img/board-2.jpg" alt="Femme d'affaire expliquant sur un tableau" width="100" height="100">
+                    <img class="slide-in slide-right" src="img/board-2.jpg" alt="Femme d'affaire expliquant sur un tableau" width="100" height="100">
                 </div>
-                <div class="section-content">
+                <div class="section-content slide-in slide-left">
                     <div>
                         <h2 class="section-title">Notre <span class="text-highlight">expertise</span></h2>
                         <img class="title-bottom" src="img/title-bottom.png" alt="Image décorative" width="50">

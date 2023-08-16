@@ -7,6 +7,24 @@ const mobileNav = document.querySelector(".main-nav");
 const readMoreButtons = document.querySelectorAll(".read-more");
 const navigationLinks = document.querySelectorAll(".main-nav a");
 
+const sliders = document.querySelectorAll(".slide-in");
+
+const observerOptions = {
+    threshold: 0,
+    rootMargin: "0px 0px -100px 0px"
+};
+
+const appearOnScroll = new IntersectionObserver((entries, appearOnScroll) => {
+    entries.forEach(entry => {
+        if(!entry.isIntersecting) {
+            return;
+        }
+
+        entry.target.classList.add("appear");
+        appearOnScroll.unobserve(entry.target);
+    });
+}, observerOptions); 
+
 
 window.addEventListener("scroll", () => {
     scrollToTop.classList.toggle("active", window.scrollY > 500);
@@ -39,3 +57,10 @@ navigationLinks.forEach((link) => {
     }
 });
 
+
+
+
+
+sliders.forEach((slider) => {
+    appearOnScroll.observe(slider);
+})
