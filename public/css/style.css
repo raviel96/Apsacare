@@ -38,6 +38,7 @@
 
     --gap-1: .4rem;
     --gap-2: .8rem;
+    --gap-3: 1.2rem;
 
 }
 
@@ -275,6 +276,18 @@ h1, h2, h3 {
     background: no-repeat center/cover url(/img/groupchat.jpeg);
 }
 
+.hero-image.formation {
+    background: no-repeat center/cover url(/img/se-former.jpg);
+}
+
+.hero-image.contact {
+    background: no-repeat center/cover url(/img/nous-contacter.jpeg);
+}
+
+.hero-image.about {
+    background: no-repeat center/cover url(/img/rencontre.jpg);
+}
+
 .hero-text {
     border-top: 1px solid rgba(255, 255, 255, 0.3);
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
@@ -475,6 +488,11 @@ h1, h2, h3 {
     place-items: center;
 }
 
+.accomp-bottom-text {
+    margin-left: var(--main-container-margin);
+    margin-right: var(--main-container-margin);
+}
+
 .accomp-nav li {
     width: 100%;
     background-color: var(--clr-secondary);
@@ -551,6 +569,35 @@ h1, h2, h3 {
 }
 
 /* Accomp end */
+
+/* About start */
+.section-about a {
+    color: var(--clr-secondary);
+    
+    transition: 0.5s;
+}
+
+.section-about a:hover {
+    color: var(--clr-primary);
+    text-decoration: underline;
+}
+
+.section-team .section-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--gap-3);
+}
+.section-team .section-container .card {
+    margin-top: var(--margin-4);
+}
+
+.section-team .section-container .card i {
+    font-size: 7rem;
+    color: var(--clr-secondary);
+}
+
+/* About end */
+
 /* Main container end */
 
 /* Responsive tablet start */
@@ -580,9 +627,11 @@ h1, h2, h3 {
     .footer-container,
     .section-domain .card-container,
     .section-partner .partner-list,
-    .accomp-nav {
+    .accomp-nav,
+    .section-team .section-container {
         grid-template-columns: repeat(2, 1fr);
     }
+    
 }
 /* Responsive tablet end */
 
@@ -595,6 +644,10 @@ h1, h2, h3 {
 
     .main-container {
         margin: var(--main-container-margin) 0;
+    }
+
+    .read-more {
+        display: none;
     }
 
     .slide-left {
@@ -755,12 +808,13 @@ h1, h2, h3 {
         padding: 0 var(--main-container-margin);
     }
 
-    .section-domain {
+    .section-domain,
+    .section-partner {
         padding-top: var(--padding-3);
         padding-bottom: var(--padding-3);
     }
 
-    .section-expert .section-container{
+    .section-expert .section-container {
         flex-direction: row-reverse;
         background-color: initial;
     }
@@ -783,7 +837,8 @@ h1, h2, h3 {
    
 
     .section-vision .section-content::before,
-    .section-expert .section-content::before {
+    .section-expert .section-content::before,
+    .expandable-card .card-content::before {
         content: url("/img/deco.png");
         display: block;
         background: none;
@@ -793,18 +848,26 @@ h1, h2, h3 {
         z-index: -2;
     }
 
-    .section-vision .section-content::before {
+    .section-vision .section-content::before,
+    #individu .card-content::before,
+    #appui-professionnel .card-content::before {
         right: 0;
         left: initial;
     }
 
-    .section-expert .section-content::before {
+    .section-expert .section-content::before,
+    #appui-social .card-content::before,
+    #appui-psychologique .card-content::before {
         transform: scaleX(-1);
         left: 0;
     }
 
     .section-vision .section-content::after,
-    .section-expert .section-content::after {
+    .section-expert .section-content::after,
+    #individu .card-content::after,
+    #appui-social .card-content::after,
+    #appui-professionnel .card-content::after,
+    #appui-psychologique .card-content::after {
         content: "";
         position: absolute;
         display: block;
@@ -815,7 +878,9 @@ h1, h2, h3 {
         z-index: -1;
     }
 
-    .section-vision .section-content::after {
+    .section-vision .section-content::after,
+    #individu .card-content::after,
+    #appui-professionnel .card-content::after {
         right: 0;
     }
 
@@ -824,7 +889,9 @@ h1, h2, h3 {
     }
 
     .section-vision .section-content, 
-    .section-expert .section-content {
+    .section-expert .section-content,
+    .expandable-card .card-content {
+        margin: 0 var(--margin-3);
         max-height: initial;
         isolation: isolate;
     }
@@ -834,17 +901,42 @@ h1, h2, h3 {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .section-vision .section-container .read-more,
-    .section-expert .section-container .read-more {
-        display: none;
-    }
-
-    .section-domain {
+    .section-domain,
+    .section-partner {
         background-color: var(--clr-card);
     }
 
     .section-domain .card-container,
     .section-partner .partner-list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .expandable-card {
+        display: flex;
+        border: 0;
+        box-shadow: none;
+        background-color: initial;
+        padding: var(--padding-4);
+    }
+
+    #appui-social .expandable-card,
+    #appui-psychologique .expandable-card {
+        flex-direction: row-reverse;
+        background-color: var(--clr-card);
+    }
+
+    .expandable-card .card-image img {
+        min-height: 100%;
+        width: 70rem;
+        border-radius: 0;
+    }
+
+    #individu .card-image img,
+    #appui-professionnel .card-image img {
+        width: 100rem;
+    }
+
+    .section-team .section-container {
         grid-template-columns: repeat(3, 1fr);
     }
 

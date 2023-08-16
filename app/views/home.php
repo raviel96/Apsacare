@@ -1,9 +1,7 @@
 <?php
-
 /** @var \$this app\core\View */
 $this->title = "Accueil";
 ?>
-<!-- Todo : add backgroud image -->
 <div class="hero-image home center">
     <blockquote class="hero-text text-center">
         <h1>Croyez en vos rêves et ils se réaliseront peut-être.<br>Croyez en vous et ils se réaliseront sûrement.</h1>
@@ -155,7 +153,7 @@ $this->title = "Accueil";
         </section>
         <!-- Mission section end -->
         <!-- Partner section start -->
-        <section class="section-partner">
+        <section id="section-partner" class="section-partner">
             <header>
                 <h2 class="section-title">Notre réseau de <span class="text-highlight">partenaire</span></h2>
                 <img class="title-bottom" src="img/title-bottom.png" alt="Image décorative" width="50">

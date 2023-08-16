@@ -102,6 +102,6 @@ $this->title = "Accompagnement";
                 <button class="read-more"></button>
             </div>
         </section>
-        <p class="margin-top-2">Ces trois dispositifs sont complémentaires et interagissent en faveur de l’épanouissement de l’individu dans les différentes sphères dans lesquelles il évolue !</p>
+        <p class="accomp-bottom-text margin-top-2 text-center"><strong>Ces trois dispositifs sont complémentaires et interagissent en faveur de l’épanouissement de l’individu dans les différentes sphères dans lesquelles il évolue !</strong></p>
     </div>
 </main>
