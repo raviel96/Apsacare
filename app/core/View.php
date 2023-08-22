@@ -26,7 +26,7 @@ class View {
         return ob_get_clean();
     }
 
-    protected function renderOnlyView($view, $params) {
+    public function renderOnlyView($view, $params) {
         extract($params);
         ob_start();
         include_once Application::$ROOT_DIR."/views/$view.php";

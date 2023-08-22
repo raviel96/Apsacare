@@ -52,6 +52,14 @@ readMoreButtons.forEach((button) => {
 });
 
 navigationLinks.forEach((link) => {
+    let position = currentLocation.search("#");
+
+    if(position != -1) {
+        if(link.href === currentLocation.substring(0, position)) {
+            link.classList.toggle("current");
+        }
+    }
+
     if(link.href === currentLocation) {
         link.classList.toggle("current");
     }

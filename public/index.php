@@ -26,7 +26,8 @@ $app->getRouter()->get("/", [HomeController::class, "index"]);
 $app->getRouter()->get("/accompagnement", [AccompaniementController::class, "index"]);
 $app->getRouter()->get("/formation", [FormationController::class, "index"]);
 $app->getRouter()->get("/a-propos", [AboutController::class, "index"]);
-$app->getRouter()->get("/contact", [ContactController::class, "index"]);
+$app->getRouter()->get("/contact", [ContactController::class, "contact"]);
+$app->getRouter()->post("/contact", [ContactController::class, "contact"]);
 $app->getRouter()->get("/cgu", [CguController::class, "index"]);
 
 $app->run();

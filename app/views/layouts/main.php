@@ -77,10 +77,10 @@
                 <div class="link-container">
                     <h3 class="link-container-title">CONTACTEZ-NOUS</h3>
                     <div class="link-container-content">
-                        <p>Téléphone : <a href="tel:0590464509">0590 464 509</a></p>
-                        <p>Email : <a href="mailto:contact@apsacare.fr">contact@apsacare.fr</a></p>
-                        <p>Adresse : 41 Rue du Chevalier Vicomte de Bragelogne</p>
-                        <p>Suivez-nous :
+                        <p><strong>Téléphone</strong> : <a href="tel:0590464509">0590 464 509</a></p>
+                        <p><strong>Email</strong> : <a href="mailto:contact@apsacare.fr">contact@apsacare.fr</a></p>
+                        <p><strong>Adresse</strong> : 41 Rue du Chevalier Vicomte de Bragelogne</p>
+                        <p><strong>Suivez-nous</strong> :
                             <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/paips16.18/">
                                 <i class="fa-brands fa-instagram"></i>
                             </a>
@@ -95,7 +95,7 @@
                                 <li><a href="/accompagnement#individu">L'individu</a></li>
                                 <li><a href="/accompagnement#appui-social">Appui social</a></li>
                                 <li><a href="/accompagnement#appui-professionnel">Appui professionnel</a></li>
-                                <li><a href="/accompagnement#appui-psychologique">Apui psychologique</a></li>
+                                <li><a href="/accompagnement#appui-psychologique">Appui psychologique</a></li>
                             </ul>
                         </nav>
                     </div>

@@ -5,6 +5,7 @@ abstract class Model {
 
     public const RULE_REQUIRED = "required";
     public const RULE_USERNAME = "username";
+    public const RULE_EMAIL = "email";
     public const RULE_MIN = "min";
     public const RULE_MATCH = "match";
     public const RULE_UNIQUE = "unique";
@@ -66,6 +67,9 @@ abstract class Model {
                             if($record) $this->addErrorForRule($attribute, self::RULE_UNIQUE, ['field' => $this->getLabel($attribute)]);
                         }
                         break;
+                    case ($ruleName == self::RULE_EMAIL && !filter_var($value, FILTER_VALIDATE_EMAIL)):
+                            $this->addErrorForRule($attribute, self::RULE_EMAIL);
+                            break; 
                     default:
                         break;
                 }
@@ -92,10 +96,11 @@ abstract class Model {
 
     public function errorMessages() {
         return [
-            self::RULE_REQUIRED => 'Champ obligatoire.',
-            self::RULE_MIN => 'Ce champ doit contenir au moins {min} caractères.',
-            self::RULE_MATCH => 'Ce champ doit être identique au champ "{match}".',
-            self::RULE_UNIQUE => 'Cet {field} existe déjà.',
+            self::RULE_REQUIRED => 'Champ obligatoire',
+            self::RULE_MIN => 'Ce champ doit contenir au moins {min} caractères',
+            self::RULE_MATCH => 'Ce champ doit être identique au champ "{match}"',
+            self::RULE_UNIQUE => 'Cet {field} existe déjà',
+            self::RULE_EMAIL => 'Veuillez saisir une adresse e-mail valide'
         ];
     }
 

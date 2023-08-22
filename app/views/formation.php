@@ -4,8 +4,8 @@ $this->title = "Formations";
 ?>
 <div class="hero-image formation center">
     <blockquote class="hero-text text-center">
-        <h1></h1>
-        <em></em>
+        <h1>Tout est possible à qui rêve, ose, travaille et n'abandonne jamais.</h1>
+        <em>- Xavier Dolan</em>
     </blockquote>
 </div>
 <main>

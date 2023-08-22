@@ -1,17 +1,22 @@
 <?php
 namespace app\core;
+use app\core\exceptions\AccessDeniedException;
 use app\core\exceptions\NotFoundException;
 use app\core\Request;
 
 class Router {
 
     protected array $routes = [];
+
+    protected array $forbiddenRoutes = [];
     public Request $request;
     public Response $response;
     
     public function __construct(Request $request, Response $response) {
         $this->request = $request;
         $this->response = $response;
+
+        $this->forbiddenRoutes = ["/css/", "/js/", "/img/"];
     }
     
     public function get($path, $callback) {
@@ -28,7 +33,11 @@ class Router {
         $path = $this->request->getPath();
         $method = $this->request->getMethod();
         $callback = $this->routes[$method][$path] ?? false;
-        
+
+        if(in_array($path, $this->forbiddenRoutes)) {
+            throw new AccessDeniedException();
+        }
+
         // Si la route demandé n'exite pas, on affiche une page d'erreur
         if(!$callback) {
             throw new NotFoundException();

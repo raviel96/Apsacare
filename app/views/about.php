@@ -4,14 +4,14 @@ $this->title = "A propos";
 ?>
 <div class="hero-image about center">
     <blockquote class="hero-text text-center">
-        <h1></h1>
-        <em></em>
+        <h1>Se réunir est un début, rester ensemble est un progrès, travailler ensemble est la réussite.</h1>
+        <em>- Henry Ford</em>
     </blockquote>
 </div>
 <main>
     <div class="main-container">
         <div class="text-center">
-            <h1 class="uppercase">Notre <span class="text-highlight">équipe</span></h1>
+            <h2 class="uppercase">Notre <span class="text-highlight">équipe</span></h2>
             <img class="title-bottom" src="img/title-bottom.png" alt="Image décorative" width="50">
         </div>
         <section class="section-about text-center">
