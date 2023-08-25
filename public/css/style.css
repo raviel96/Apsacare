@@ -934,13 +934,9 @@ h1, h2, h3 {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .contact-container .form {
+    .grid-span-2 {
         grid-column: span 2;
-    }
-
-    .contact-container .form-container .form-group.textarea {
-        grid-column: span 2;
-    }
+    } 
 
     .contact-container .contact .contact-info .fa-location-dot {
         width: 3.125rem;

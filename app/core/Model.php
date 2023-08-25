@@ -15,6 +15,10 @@ abstract class Model {
     public function loadData($data) {
         foreach ($data as $key => $value) {
             if(property_exists($this, $key)) {
+                if(is_string($value) && strlen($value) == 0) {
+                    $value = "Non spécifié";       
+                }
+
                 $this->{$key} = $value;
             }
         }

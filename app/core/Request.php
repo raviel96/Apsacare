@@ -24,12 +24,12 @@ class Request {
 
         if($this->getMethod() == "get") {
             foreach($_GET as $key => $value) {
-                $data[$key] = filter_input(INPUT_GET, $key, FILTER_SANITIZE_SPECIAL_CHARS);
+                $data[$key] = html_entity_decode(filter_input(INPUT_GET, $key, FILTER_SANITIZE_SPECIAL_CHARS));
             }
         }
         if($this->getMethod() == "post") {
             foreach($_POST as $key => $value) {
-                $data[$key] = filter_input(INPUT_POST, $key, FILTER_SANITIZE_SPECIAL_CHARS);
+                $data[$key] = html_entity_decode(filter_input(INPUT_POST, $key, FILTER_SANITIZE_SPECIAL_CHARS));
             }
         }
 

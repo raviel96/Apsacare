@@ -18,10 +18,27 @@ $this->title = "Contact";
                     <img class="title-bottom" src="img/title-bottom.png" alt="Image décorative" width="50">
                 </div>
                 <div class="contact-container">
-                    <div class="form ">
+                    <div class="form grid-span-2">
                         <h3>Envoyer un message</h3>
+                        
                         <form action="/contact" method="post">
                             <div class="form-container">
+                                <div class="form-group">
+                                    <label for="subject">Objet du message *</label>
+                                    <select class="form-control <?php echo $model->hasErrors('subject') ? 'is-invalid' : ''; ?>" name="subject" id="subject">
+                                        <option value="Demande d'information">Demande d'information</option>
+                                        <option value="Autre">Autre</option>
+                                    </select>
+                                    <span class="invalid-feedback"><?php echo $model->getFirstError('subject'); ?></span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="status">Vous êtes *</label>
+                                    <select class="form-control <?php echo $model->hasErrors('status') ? 'is-invalid' : ''; ?>" name="status" id="status">
+                                        <option value="particulier">Particulier</option>
+                                        <option value="professionnel">Professionnel</option>
+                                    </select>
+                                    <span class="invalid-feedback"><?php echo $model->getFirstError('status'); ?></span>
+                                </div>
                                 <div class="form-group">
                                     <label for="lastname">Nom *</label>
                                     <input class="form-control <?php echo $model->hasErrors('lastname') ? 'is-invalid' : ''; ?>" type="text" name="lastname" id="lastname" placeholder="Nom" value="<?php echo $model->lastname ?>" required>
@@ -41,7 +58,7 @@ $this->title = "Contact";
                                     <label for="phone">Téléphone</label>
                                     <input class="form-control" type="tel" name="phone" id="phone" placeholder="Téléphone">
                                 </div>
-                                <div class="form-group textarea">
+                                <div class="form-group grid-span-2">
                                     <label for="message">Message *</label>
                                     <textarea class="form-control <?php echo $model->hasErrors('message') ? 'is-invalid' : ''; ?>" name="message" id="message" placeholder="Votre message..." required><?php echo $model->message ?></textarea>
                                     <span class="invalid-feedback"><?php echo $model->getFirstError('message'); ?></span>
