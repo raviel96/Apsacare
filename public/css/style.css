@@ -92,6 +92,27 @@ h1, h2, h3 {
 }
 /* Utilities end */
 
+/* Alert start*/
+
+.alert {
+    text-align: center;
+    padding: 15px;
+    margin: 15px auto;
+    width: 50%;
+    color: var(--clr-light);
+    font-weight: 600;
+}
+
+.alert.alert-success {
+    background: var(--clr-primary);
+}
+
+.alert.alert-error {
+    background: rgba(255,0,0, 0.6);
+}
+
+/* Alert end*/
+
 /* Error page */
     .exception-container {
         padding: var(--main-container-margin);

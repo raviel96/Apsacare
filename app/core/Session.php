@@ -37,8 +37,15 @@ class Session {
     }
 
     public function getFlash($key) {
+        return $_SESSION[self::FLASH_KEY][$key] ?? false;
+    
+    }
+
+    public function getFlashMessage($key) {
         return $_SESSION[self::FLASH_KEY][$key]['value'] ?? false;
     }
+
+
 
     public function __destruct() {
         $flashMessages = $_SESSION[self::FLASH_KEY] ?? [];

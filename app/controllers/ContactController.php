@@ -1,10 +1,14 @@
 <?php
 
 namespace app\controllers;
+
+use app\core\Application;
 use app\core\Controller;
 use app\core\Request;
 use app\core\Response;
 use app\models\Contact;
+use Exception;
+use PHPMailer\PHPMailer\PHPMailer;
 
 class ContactController extends Controller {
 
@@ -18,72 +22,77 @@ class ContactController extends Controller {
             $contact->loadData($request->getData());
             
             if($contact->validate()) {
-                $br = "<br>";
+                
+                $mail = new PHPMailer(true);
+                try {
+                    $tdStyle = 'style="padding: 10px;word-wrap: anywhere;"';
+                    $titleClr = 'style="color: rgb(60, 139, 191);"';
 
-                $subject = $contact->subject;
-                $body = "De : ".$contact->lastname." ".$contact->firstname.$br
-                        ."Statut : " .$contact->status. $br
-                        ."Email : ".$contact->email. $br
-                        ."Téléphone : ".$contact->phone. $br
-                        ."Message : ".$br.
-                        '<div style="line-height: 1.2;margin: 10px">'
-                        .$contact->message.
-                        '</div>';
-
-                $toto = '<html>
+                    $subject = $contact->subject;
+                    $body = '<html>
                             <head>
                                 <title>Message de contact</title>
                             </head>
                             <body>
-                                <p style="font-size: 18px;"><strong>ApsaCare</strong></p>
+                                <p style="font-size: 18px;"><strong><span style="color:#9BB43C">Apsa</span><span style="color:#3C8BBF">Care</span></strong></p>
                                 <p style="margin: 10px 0; font-size: 15px;">Vous avez reçu une nouvelle prise de contact avec les informations suivantes : </p>
-                                <table style="font-size: 15px;border-spacing: 0 5px;margin: 20px 0;">
+                                <table style="font-size: 15px;border-spacing: 0 5px;margin: 20px 0;table-layout: fixed">
                                     <tbody>
                                         <tr>
-                                            <td><strong>Nom :</strong> </td>
-                                            <td>'.$contact->lastname.'</td>
+                                            <td><strong '.$titleClr.'>Nom :</strong> </td>
+                                            <td '.$tdStyle.'>'.$contact->lastname.'</td>
                                         </tr>
                                         <tr>
-                                            <td><strong>Prénom :</strong> </td>
-                                            <td>'.$contact->firstname.'</td>
+                                            <td><strong '.$titleClr.'>Prénom :</strong> </td>
+                                            <td '.$tdStyle.'>'.$contact->firstname.'</td>
                                         </tr>
                                         <tr>
-                                            <td><strong>Statut :</strong> </td>
-                                            <td>'.$contact->status.'</td>
+                                            <td><strong '.$titleClr.'>Object du message :</strong> </td>
+                                            <td '.$tdStyle.'>'.$contact->subject.'</td>
                                         </tr>
                                         <tr>
-                                            <td><strong>Email :</strong> </td>
-                                            <td>'.$contact->email.'</td>
+                                            <td><strong '.$titleClr.'>Statut :</strong> </td>
+                                            <td '.$tdStyle.'>'.$contact->status.'</td>
                                         </tr>
                                         <tr>
-                                            <td><strong>Téléphone :</strong> </td>
-                                            <td>'.$contact->phone.'</td>
+                                            <td><strong '.$titleClr.'>Email :</strong> </td>
+                                            <td '.$tdStyle.'>'.$contact->email.'</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong '.$titleClr.'>Téléphone :</strong> </td>
+                                            <td '.$tdStyle.'>'.$contact->phone.'</td>
                                         </tr>
                                     </tbody>
                                 </table>
                                 <div style="font-size: 15px;margin-top: 10px;margin-inline: 10px;">
-                                    <p><strong>Message :</strong> </p>
+                                    <p><strong '.$titleClr.'>Message :</strong> </p>
                                     <p>'.$contact->message.'</p>
                                 </div>
                             </body>
-
                         </html>
                 ';
 
-                $headers = [
-                    "From" => $contact->email,
-                    "Reply-To" => $contact->email,
-                    "X-Mailer" => 'PHP/' .phpversion(),
-                    "X-Priority" => "1",
-                    "MIME-Version" => "1.0",
-                    "Content-Type" => "text/html; charset=UTF-8"
-                ];
+                    $mail->isSMTP();
+                    $mail->Host = "smtp.gmail.com";
+                    $mail->SMTPAuth = true;
+                    $mail->Username = "meldoune971@gmail.com";
+                    $mail->Password = "dwgkqpyiffjbdykj";
+                    $mail->SMTPSecure = "tls";
+                    $mail->Port = 587;
 
-                if(!mail(self::SEND_TO, $subject, $toto, $headers)) {
-                    return "Erreur lors de l'envoie du message";
+                    $mail->setFrom($contact->email, "ApsaCare");
+                    $mail->addAddress(self::SEND_TO);
+                    $mail->addReplyTo($contact->email);
+
+                    $mail->isHTML(true);
+                    $mail->Subject = $subject;
+                    $mail->Body = $body;
+                    $mail->send();
+                    
+                    $this->redirectToContact($response, "success", "Votre message a été envoyé avec succès !");
+                } catch(Exception $e) {
+                    $this->redirectToContact($response,"error", "Nous avons rencontré une erreur lors de l'envoie du message");
                 }
-
-                return "Votre message a été envoyé avec succès !";
                 
             }
 
@@ -91,5 +100,12 @@ class ContactController extends Controller {
         }
         
         return $this->render("contact", ["model" => $contact]);
+    }
+
+
+
+    protected function redirectToContact(Response $response, $flashKey, $falshMessage) {
+        Application::$app->getSession()->setFlash($flashKey, $falshMessage);
+        $response->redirect("/contact");
     }
 }

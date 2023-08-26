@@ -1,6 +1,9 @@
 <?php
 
 /** @var \$this app\core\View */
+
+use app\core\Application;
+
 $this->title = "Contact";
 ?>
 <div class="hero-image contact center">
@@ -9,6 +12,15 @@ $this->title = "Contact";
         <p>- Henry David Thoreau</p>
     </blockquote>
 </div>
+<?php if(Application::$app->getSession()->getFlash("success")): ?>
+    <div class="alert alert-success">
+        <p><?php echo Application::$app->getSession()->getFlashMessage("success") ?></p>
+    </div>
+<?php elseif(Application::$app->getSession()->getFlash("error")): ?>
+    <div class="alert alert-error">
+        <p><?php echo Application::$app->getSession()->getFlash("error") ?></p>
+    </div>
+<?php endif; ?>
 <main>
     <div class="main-container">
         <section class="section-contact">
