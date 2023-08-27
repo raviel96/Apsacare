@@ -2,6 +2,7 @@
 
 namespace app\core;
 
+use app\models\Admin;
 use Exception;
 
 class Application {
@@ -17,6 +18,7 @@ class Application {
     private ?Controller $controller = null;
     private Database $database;
     private View $view;
+	private Admin $admin;
     
     
     public function __construct($rootPath, array $config) {
@@ -30,8 +32,8 @@ class Application {
         $this->router = new Router($this->request, $this->response);
         $this->view = new View();
 
-        $this->database = new Database($config['db']);
-        
+        $this->database = new Database($config['db'] ?? []);
+        $this->admin = new Admin($config['admin'] ?? []);
     }
 
     public function run() {
@@ -101,5 +103,13 @@ class Application {
 	
 	public function setView(View $view) {
 		$this->view = $view;
+	}
+
+	public function getAdmin() {
+		return $this->admin;
+	}
+	
+	public function setAdmin(Admin $admin) {
+		$this->admin = $admin;
 	}
 }

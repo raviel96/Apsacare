@@ -22,7 +22,7 @@ class ContactController extends Controller {
             $contact->loadData($request->getData());
             
             if($contact->validate()) {
-                
+                $admin = Application::$app->getAdmin();
                 $mail = new PHPMailer(true);
                 try {
                     $tdStyle = 'style="padding: 10px;word-wrap: anywhere;"';
@@ -75,8 +75,8 @@ class ContactController extends Controller {
                     $mail->isSMTP();
                     $mail->Host = "smtp.gmail.com";
                     $mail->SMTPAuth = true;
-                    $mail->Username = "meldoune971@gmail.com";
-                    $mail->Password = "dwgkqpyiffjbdykj";
+                    $mail->Username = $admin->getAdminMail();
+                    $mail->Password = $admin->getAdminPwd();
                     $mail->SMTPSecure = "tls";
                     $mail->Port = 587;
 

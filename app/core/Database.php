@@ -12,11 +12,6 @@ class Database {
         $dsn = $config['dsn'] ?? '';
         $user = $config['user'] ?? '';
         $password = $config['password'] ?? '';
-
-        echo $dsn;
-
-        // $this->pdo = new PDO($dsn, $user, $password);
-        // $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     }   
 
     public function applyMigrations() {
