@@ -26,7 +26,7 @@ class ContactController extends Controller {
                 $mail = new PHPMailer(true);
                 try {
                     $tdStyle = 'style="padding: 10px;word-wrap: anywhere;"';
-                    $titleClr = 'style="color: rgb(60, 139, 191);"';
+                    $titleClr = 'style="color: rgb(60, 139, 191);word-wrap: anywhere;"';
 
                     $subject = $contact->subject;
                     $body = '<html>
@@ -93,7 +93,7 @@ class ContactController extends Controller {
                 } catch(Exception $e) {
                     $this->redirectToContact($response,"error", "Nous avons rencontré une erreur lors de l'envoie du message");
                 }
-                
+                                
             }
 
             return $this->render("contact", ["model" => $contact]);

@@ -37,7 +37,7 @@ $this->title = "Contact";
                             <div class="form-container">
                                 <div class="form-group">
                                     <label for="subject">Objet du message *</label>
-                                    <select class="form-control <?php echo $model->hasErrors('subject') ? 'is-invalid' : ''; ?>" name="subject" id="subject">
+                                    <select class="form-control <?php echo $model->hasErrors('subject') ? 'is-invalid' : ''; ?>" name="subject" id="subject" required>
                                         <option value="Demande d'information">Demande d'information</option>
                                         <option value="Autre">Autre</option>
                                     </select>
@@ -45,7 +45,7 @@ $this->title = "Contact";
                                 </div>
                                 <div class="form-group">
                                     <label for="status">Vous êtes *</label>
-                                    <select class="form-control <?php echo $model->hasErrors('status') ? 'is-invalid' : ''; ?>" name="status" id="status">
+                                    <select class="form-control <?php echo $model->hasErrors('status') ? 'is-invalid' : ''; ?>" name="status" id="status" required>
                                         <option value="particulier">Particulier</option>
                                         <option value="professionnel">Professionnel</option>
                                     </select>
@@ -68,7 +68,8 @@ $this->title = "Contact";
                                 </div>
                                 <div class="form-group">
                                     <label for="phone">Téléphone</label>
-                                    <input class="form-control" type="tel" name="phone" id="phone" placeholder="Téléphone">
+                                    <input class="form-control <?php echo $model->hasErrors('phone') ? 'is-invalid' : ''; ?>" type="tel" name="phone" id="phone" placeholder="Téléphone">
+                                    <span class="invalid-feedback"><?php echo $model->getFirstError('phone'); ?></span>
                                 </div>
                                 <div class="form-group grid-span-2">
                                     <label for="message">Message *</label>

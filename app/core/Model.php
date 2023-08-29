@@ -8,6 +8,7 @@ abstract class Model {
     public const RULE_EMAIL = "email";
     public const RULE_MIN = "min";
     public const RULE_MATCH = "match";
+    public const RULE_PHONE = "phone";
     public const RULE_UNIQUE = "unique";
 
     public array $errors = [];
@@ -15,10 +16,6 @@ abstract class Model {
     public function loadData($data) {
         foreach ($data as $key => $value) {
             if(property_exists($this, $key)) {
-                if(is_string($value) && strlen($value) == 0) {
-                    $value = "Non spécifié";       
-                }
-
                 $this->{$key} = $value;
             }
         }
@@ -74,6 +71,13 @@ abstract class Model {
                     case ($ruleName == self::RULE_EMAIL && !filter_var($value, FILTER_VALIDATE_EMAIL)):
                             $this->addErrorForRule($attribute, self::RULE_EMAIL);
                             break; 
+                    case ($ruleName == self::RULE_PHONE):
+                            if($value) {
+                                if(!preg_match("/^[\d\s\+\-]+$/",$value)) {
+                                    $this->addErrorForRule($attribute, self::RULE_PHONE);
+                                }
+                            }
+                            break;
                     default:
                         break;
                 }
@@ -81,6 +85,7 @@ abstract class Model {
             }
         }
 
+        var_dump(empty($this->errors));
         return empty($this->errors);
     }
 
@@ -104,7 +109,8 @@ abstract class Model {
             self::RULE_MIN => 'Ce champ doit contenir au moins {min} caractères',
             self::RULE_MATCH => 'Ce champ doit être identique au champ "{match}"',
             self::RULE_UNIQUE => 'Cet {field} existe déjà',
-            self::RULE_EMAIL => 'Veuillez saisir une adresse e-mail valide'
+            self::RULE_EMAIL => 'Veuillez saisir une adresse e-mail valide',
+            self::RULE_PHONE => 'Veuillez saisir un numéro valide'
         ];
     }
 

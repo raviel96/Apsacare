@@ -22,8 +22,13 @@ class Contact extends Model {
             'lastname' => [self::RULE_REQUIRED],
             'firstname' => [self::RULE_REQUIRED],
             'email' => [self::RULE_REQUIRED, self::RULE_EMAIL],
+            'phone' => [self::RULE_PHONE],
             'message' => [self::RULE_REQUIRED],
             'legal' => [self::RULE_REQUIRED],
         ];
+    }
+
+    public function __destruct() {
+        
     }
 }

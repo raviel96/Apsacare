@@ -40,7 +40,7 @@ $this->title = "Accueil";
                         </li>
                         <li>
                             <span class="fa-li"><i class="fa-solid fa-circle-right"></i></span>
-                            <p><strong>Insérer</strong></p></p>
+                            <p><strong>Insérer</strong></p>
                         </li>
                     </ul> 
                 </div>
