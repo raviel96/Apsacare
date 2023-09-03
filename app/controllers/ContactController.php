@@ -26,7 +26,7 @@ class ContactController extends Controller {
                 $mail = new PHPMailer(true);
                 try {
                     $tdStyle = 'style="padding: 10px;word-wrap: anywhere;"';
-                    $titleClr = 'style="color: rgb(60, 139, 191);word-wrap: anywhere;"';
+                    $titleClr = 'style="color: rgb(60, 139, 191);"';
 
                     $subject = $contact->subject;
                     $body = '<html>
@@ -47,7 +47,7 @@ class ContactController extends Controller {
                                             <td '.$tdStyle.'>'.$contact->firstname.'</td>
                                         </tr>
                                         <tr>
-                                            <td><strong '.$titleClr.'>Object du message :</strong> </td>
+                                            <td style="white-space: nowrap;"><strong '.$titleClr.'>Object du message :</strong> </td>
                                             <td '.$tdStyle.'>'.$contact->subject.'</td>
                                         </tr>
                                         <tr>

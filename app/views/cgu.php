@@ -1,4 +1,7 @@
-<?php ?>
+<?php 
+/** @var \$this app\core\View */
+$this->title = "Mentions légales";
+?>
 <div class="hero-image cgu center"></div>
 <main>
     <div class="main-container cgu-main">
