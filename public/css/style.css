@@ -586,6 +586,10 @@ h1, h2, h3 {
     background: linear-gradient(var(--clr-secondary), var(--clr-accent-secondary));
 }
 
+.section-domain .card-container .card:hover {
+    filter: brightness(80%);
+}
+
 .section-domain .card-container .card img {
     width: 5rem;
     height: 5rem;

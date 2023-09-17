@@ -21,9 +21,7 @@ class Contact extends Model {
             'status' => [self::RULE_REQUIRED],
             'lastname' => [self::RULE_REQUIRED],
             'firstname' => [self::RULE_REQUIRED],
-            'email' => [self::RULE_REQUIRED, self::RULE_EMAIL],
-            'phone' => [self::RULE_PHONE],
-            'message' => [self::RULE_REQUIRED],
+            'phone' => [self::RULE_REQUIRED, self::RULE_PHONE],
             'legal' => [self::RULE_REQUIRED],
         ];
     }

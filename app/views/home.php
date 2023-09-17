@@ -87,42 +87,42 @@ $this->title = "Accueil";
                 <img class="title-bottom" src="img/title-bottom.png" alt="Image décorative" width="50">
             </header>
             <div class="section-container card-container">
-                <div class="card">
+                <a href="/accompagnement#appui-social" class="card">
                     <img src="img/social.svg" alt="Icone groupe social" width="100" height="100">
                     <div class="card-content">
                         <p><strong>Accompagnement social</strong></p>
                     </div>
-                </div>
-                <div class="card">
+                </a>
+                <a href="/accompagnement#appui-social" class="card">
                     <img src="img/socio-pro.svg" alt="Icone d'un personnage à cravate" width="100" height="100">
                     <div class="card-content">
                         <p><strong>Accompagnement socio-professionnel</strong></p>
                     </div>
-                </div>
-                <div class="card">
+                </a>
+                <a href="/accompagnement#individu" class="card">
                     <img src="img/job-search.svg" alt="Icone recherche d'emploi" width="100" height="100">
                     <div class="card-content">
                         <p><strong>Aide à l’insertion et accompagnement à la recherche d’emploi, de formation</strong></p>
                     </div>
-                </div>
-                <div class="card">
+                </a>
+                <a href="/accompagnement#appui-psychologique" class="card">
                     <img src="img/psychology.svg" alt="Icone montrant l'intelligence" width="100" height="100">
                     <div class="card-content">
                         <p><strong>Accompagnement psychologique</strong></p>
                     </div>
-                </div>
-                <div class="card">
+                </a>
+                <a href="/accompagnement#appui-professionnel" class="card">
                     <img src="img/vae.svg" alt="Icone d'un diplôme" width="100" height="100">
                     <div class="card-content">
                         <p><strong>Accompagnement à la VAE</strong></p>
                     </div>
-                </div>
-                <div class="card">
+                </a>
+                <a href="/accompagnement#appui-professionnel" class="card">
                     <img src="img/company.svg" alt="Icon d'une entreprise et deux petits personnages" width="100" height="100">
                     <div class="card-content">
                         <p><strong>Accompagnement à la Création d’entreprise</strong></p>
                     </div>
-                </div>
+                </a>
             </div>
         </section>
         <!-- Domain section end -->

@@ -85,7 +85,6 @@ abstract class Model {
             }
         }
 
-        var_dump(empty($this->errors));
         return empty($this->errors);
     }
 

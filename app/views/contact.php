@@ -33,7 +33,7 @@ $this->title = "Contact";
                     <div class="form grid-span-2">
                         <h3>Envoyer un message</h3>
                         
-                        <form action="/contact" method="post">
+                        <form id="contact-form" action="/contact" method="post">
                             <div class="form-container">
                                 <div class="form-group">
                                     <label for="subject">Objet du message *</label>
@@ -53,32 +53,32 @@ $this->title = "Contact";
                                 </div>
                                 <div class="form-group">
                                     <label for="lastname">Nom *</label>
-                                    <input class="form-control <?php echo $model->hasErrors('lastname') ? 'is-invalid' : ''; ?>" type="text" name="lastname" id="lastname" placeholder="Nom" value="<?php echo $model->lastname ?>" required>
+                                    <input class="form-control <?php echo $model->hasErrors('lastname') ? 'is-invalid' : ''; ?>" type="text" name="lastname" id="lastname" placeholder="Nom" value="<?php echo $model->lastname ?>">
                                     <span class="invalid-feedback"><?php echo $model->getFirstError('lastname'); ?></span>
                                 </div>
                                 <div class="form-group">
                                     <label for="firstname">Prénom *</label>
-                                    <input class="form-control <?php echo $model->hasErrors('firstname') ? 'is-invalid' : ''; ?>" type="text" name="firstname" id="firstname" placeholder="Prénom" value="<?php echo $model->firstname ?>" required>
+                                    <input class="form-control <?php echo $model->hasErrors('firstname') ? 'is-invalid' : ''; ?>" type="text" name="firstname" id="firstname" placeholder="Prénom" value="<?php echo $model->firstname ?>">
                                     <span class="invalid-feedback"><?php echo $model->getFirstError('firstname'); ?></span>
                                 </div>
                                 <div class="form-group">
-                                    <label for="email">Email *</label>
-                                    <input class="form-control <?php echo $model->hasErrors('email') ? 'is-invalid' : ''; ?>" type="email" name="email" id="email" placeholder="Email" value="<?php echo $model->email ?>" required>
+                                    <label for="email">Email</label>
+                                    <input class="form-control <?php echo $model->hasErrors('email') ? 'is-invalid' : ''; ?>" type="email" name="email" id="email" placeholder="Email" value="<?php echo $model->email ?>">
                                     <span class="invalid-feedback"><?php echo $model->getFirstError('email'); ?></span>
                                 </div>
                                 <div class="form-group">
-                                    <label for="phone">Téléphone</label>
+                                    <label for="phone">Téléphone *</label>
                                     <input class="form-control <?php echo $model->hasErrors('phone') ? 'is-invalid' : ''; ?>" type="tel" name="phone" id="phone" placeholder="Téléphone">
                                     <span class="invalid-feedback"><?php echo $model->getFirstError('phone'); ?></span>
                                 </div>
                                 <div class="form-group grid-span-2">
-                                    <label for="message">Message *</label>
-                                    <textarea class="form-control <?php echo $model->hasErrors('message') ? 'is-invalid' : ''; ?>" name="message" id="message" placeholder="Votre message..." required><?php echo $model->message ?></textarea>
+                                    <label for="message">Message</label>
+                                    <textarea class="form-control <?php echo $model->hasErrors('message') ? 'is-invalid' : ''; ?>" name="message" id="message" placeholder="Votre message..."><?php echo $model->message ?></textarea>
                                     <span class="invalid-feedback"><?php echo $model->getFirstError('message'); ?></span>
                                 </div>
                             </div>
-                            <div class="legals">
-                                <input class="form-control" type="checkbox" name="legal" id="legal" required>
+                            <div class=" form-group legals">
+                                <input class="form-control" type="checkbox" name="legal" id="legal">
                                 <label for="message">J'ai lu et accepté les <a href="/cgu">mentions légales</a> *</label>
                                 <br><span class="invalid-feedback"><?php echo $model->getFirstError('legal'); ?></span>
                             </div>
