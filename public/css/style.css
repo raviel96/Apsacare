@@ -8,7 +8,7 @@
     --clr-secondary:#3C8BBF;
     --clr-accent-primary: #7c9030;
     --clr-accent-secondary: #306f99;
-    --clr-light: rgba(255,255,255, 0.9);
+    --clr-light: #ffffffe6;
     --clr-dark: #222;
     --clr-card: #F6F6F6;
 
@@ -1074,7 +1074,8 @@ h1, h2, h3 {
     }
 
     .menu-container .main-nav li > a.current,
-    .menu-container .main-nav li > a:hover {
+    .menu-container .main-nav li > a:hover,
+    .menu-container .main-nav li > a:focus {
         color: var(--clr-light);
         background-color: var(--clr-primary);
     }
@@ -1097,7 +1098,8 @@ h1, h2, h3 {
     }
 
     .menu-container .main-nav li > a.current::before,
-    .menu-container .main-nav li > a:hover::before {
+    .menu-container .main-nav li > a:hover::before,
+    .menu-container .main-nav li > a:focus::before {
         bottom: -5px;
         left: -5px;
         opacity: 1;
@@ -1111,7 +1113,8 @@ h1, h2, h3 {
     }
 
     .menu-container .main-nav li > a.current::after,
-    .menu-container .main-nav li > a:hover::after {
+    .menu-container .main-nav li > a:hover::after,
+    .menu-container .main-nav li > a:focus::after {
         top: -5px;
         right: -5px;
         opacity: 1;

@@ -18,7 +18,7 @@ $this->title = "Contact";
     </div>
 <?php elseif(Application::$app->getSession()->getFlash("error")): ?>
     <div class="alert alert-error">
-        <p><?php echo Application::$app->getSession()->getFlash("error") ?></p>
+        <p><?php echo Application::$app->getSession()->getFlashMessage("error") ?></p>
     </div>
 <?php endif; ?>
 <main>

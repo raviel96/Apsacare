@@ -116,8 +116,7 @@ sliders.forEach((slider) => {
 
 // Contact form validation
 contactForm.addEventListener("submit", (event) => {
-    event.preventDefault();
-
+    
     if(!validate()) {
         inputList.forEach(input => {
 
@@ -140,7 +139,8 @@ contactForm.addEventListener("submit", (event) => {
         });
 
         return false;
-    }
+    } 
+    
 });
 
 function validate() {

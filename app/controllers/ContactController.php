@@ -80,9 +80,11 @@ class ContactController extends Controller {
                     $mail->SMTPSecure = "tls";
                     $mail->Port = 587;
 
-                    $mail->setFrom($contact->email, "ApsaCare");
+                    if($contact->email) {
+                        $mail->setFrom($contact->email, "ApsaCare");
+                        $mail->addReplyTo($contact->email);
+                    }
                     $mail->addAddress(self::SEND_TO);
-                    $mail->addReplyTo($contact->email);
 
                     $mail->isHTML(true);
                     $mail->Subject = $subject;
@@ -104,8 +106,8 @@ class ContactController extends Controller {
 
 
 
-    protected function redirectToContact(Response $response, $flashKey, $falshMessage) {
-        Application::$app->getSession()->setFlash($flashKey, $falshMessage);
+    protected function redirectToContact(Response $response, $flashKey, $flashMessage) {
+        Application::$app->getSession()->setFlash($flashKey, $flashMessage);
         $response->redirect("/contact");
     }
 }
