@@ -113,7 +113,6 @@ sliders.forEach((slider) => {
     appearOnScroll.observe(slider);
 });
 
-
 // Contact form validation
 contactForm.addEventListener("submit", () => {
     

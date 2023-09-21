@@ -1,9 +1,11 @@
 <?php
 
 namespace app\models;
+
+use app\core\DatabaseModel;
 use app\core\Model;
 
-class Contact extends Model {
+class Contact extends DatabaseModel {
 
     public string $subject = "";
     public string $status = "";
@@ -13,6 +15,20 @@ class Contact extends Model {
     public string $phone = "";
     public string $message = "";
     public bool $legal = false;
+
+    public function tableName(): string {
+        return "contact";
+    }
+
+    public function attributes(): array
+    {
+        return ["subject", "status", "lastname", "firstname", "email", "phone", "message"];
+    }
+
+    public function primaryKey(): string
+    {
+     return "id";   
+    }
 
     public function rules():array {
     

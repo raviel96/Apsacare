@@ -3,7 +3,7 @@ namespace app\core;
 
 use PDO;
 
-class Database {
+class Database{
 
     public PDO $pdo;
 
@@ -69,10 +69,6 @@ class Database {
         
         $statement = $this->pdo->prepare($sql);
         $statement->execute();
-    }
-
-    public function prepare($sql) {
-        return $this->pdo->prepare($sql);
     }
 
     protected function log($message) {
