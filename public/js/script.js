@@ -115,7 +115,7 @@ sliders.forEach((slider) => {
 
 
 // Contact form validation
-contactForm.addEventListener("submit", (event) => {
+contactForm.addEventListener("submit", () => {
     
     if(!validate()) {
         inputList.forEach(input => {
@@ -143,6 +143,11 @@ contactForm.addEventListener("submit", (event) => {
     
 });
 
+/**
+ * Check if all input values are correct
+ * @returns Return true if the error array is empty.
+ * Otherwise return false.
+ */
 function validate() {
     errors = [];
 
@@ -233,7 +238,8 @@ function validate() {
 }
 
 /**
- * 
+ * Get the error message for the specifi rule, 
+ * then add this message in the error array for the input field
  * @param input The input field
  * @param rule The rule that trigged
  */
@@ -254,10 +260,21 @@ function addErrorForRule(input, rule) {
     errors[input] = message;
 }
 
+/**
+ * 
+ * @param  regex The regex  
+ * @param  value The value to check
+ * @returns Return true if the field value match the regex. Otherwise, false
+ */
 function isValid(regex, value) {
     return regex.test(value);
 }
 
+/**
+ * 
+ * @param input The input field 
+ * @returns Return true if there's an error message for the input , or false if not
+ */
 function hasError(input) {
     return errors[input.name] ? true : false;
 }
@@ -265,7 +282,7 @@ function hasError(input) {
 /**
  * 
  * @param input The input field
- * @returns 
+ * @returns Return the error message for the input, or an empty string
  */
 function getFirstError(input) {
     return errors[input.name] ?? "";
