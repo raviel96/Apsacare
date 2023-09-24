@@ -12,6 +12,9 @@ class Database{
         $dsn = $config['dsn'] ?? '';
         $user = $config['user'] ?? '';
         $password = $config['password'] ?? '';
+
+        $this->pdo = new PDO($dsn, $user, $password);
+        $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     }   
 
     public function applyMigrations() {
@@ -27,9 +30,8 @@ class Database{
             if($migration == "." || $migration == "..") continue;
 
             require_once Application::$ROOT_DIR."/migrations/$migration";
-
             $className = pathinfo($migration, PATHINFO_FILENAME);
-
+            
             $instance = new $className();
             $instance->up();
 

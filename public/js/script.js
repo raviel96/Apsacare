@@ -41,6 +41,7 @@ const firstname = document.querySelector("#firstname");
 const email = document.querySelector("#email");
 const phone = document.querySelector("#phone");
 const legal = document.querySelector("#legal");
+const submitButton = document.querySelector("#submit");
 
 let inputList = [
     lastname,
@@ -114,9 +115,11 @@ sliders.forEach((slider) => {
 });
 
 // Contact form validation
-contactForm.addEventListener("submit", () => {
+contactForm.addEventListener("submit", (event) => {
     
     if(!validate()) {
+        event.preventDefault();
+
         inputList.forEach(input => {
 
             let errorMessage = getFirstError(input);
@@ -136,10 +139,10 @@ contactForm.addEventListener("submit", () => {
             span.innerHTML = errorMessage;
             
         });
-
+        
         return false;
     } 
-    
+
 });
 
 /**

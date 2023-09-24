@@ -17,10 +17,11 @@ class ContactController extends Controller {
     public function contact(Request $request, Response $response) {
        
         $contact = new Contact();
-       
+
         if($request->isPost()) {
-            $contact->loadData($request->getData());
             
+            $contact->loadData($request->getData());
+
             if($contact->validate()) {
                 $admin = Application::$app->getAdmin();
                 $mail = new PHPMailer(true);
@@ -100,6 +101,7 @@ class ContactController extends Controller {
 
             return $this->render("contact", ["model" => $contact]);
         }
+        
         
         return $this->render("contact", ["model" => $contact]);
     }

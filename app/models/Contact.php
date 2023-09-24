@@ -7,6 +7,8 @@ use app\core\Model;
 
 class Contact extends DatabaseModel {
 
+    public int $id;
+    public string $created_at;
     public string $subject = "";
     public string $status = "";
     public string $lastname = "";
@@ -22,7 +24,15 @@ class Contact extends DatabaseModel {
 
     public function attributes(): array
     {
-        return ["subject", "status", "lastname", "firstname", "email", "phone", "message"];
+        return [
+            "subject", 
+            "status", 
+            "lastname", 
+            "firstname", 
+            "email", 
+            "phone", 
+            "message"
+        ];
     }
 
     public function primaryKey(): string
