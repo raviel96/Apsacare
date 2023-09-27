@@ -2,6 +2,7 @@ const RULE_REQUIRED = "required";
 const RULE_PHONE = "phone";
 const RULE_EMAIL = "email";
 const RULE_NAME = "name";
+const RULE_MIN = "min"
 
 // Variable objects for form validation
 let errors = {};
@@ -10,12 +11,13 @@ let errorMessages = {
     required: "Champ obligatoire",
     phone: "Veuillez saisir un numéro valide",
     email: "Veuillez saisir une adresse e-mail valide",
-    name: "Le {name} spécifié est incorrect"
+    name: "Ce champ est invalide",
+    min: "Ce champ doit contenir au moins {min} caractères"
 };
 
 let rules = {
-    lastname: [RULE_REQUIRED, RULE_NAME], 
-    firstname: [RULE_REQUIRED, RULE_NAME], 
+    lastname: [RULE_REQUIRED, RULE_NAME, RULE_MIN], 
+    firstname: [RULE_REQUIRED, RULE_NAME, RULE_MIN], 
     email: [RULE_EMAIL], 
     phone: [RULE_REQUIRED, RULE_PHONE], 
     legal: [RULE_REQUIRED]
@@ -115,35 +117,38 @@ sliders.forEach((slider) => {
 });
 
 // Contact form validation
-contactForm.addEventListener("submit", (event) => {
+if(contactForm) {
     
-    if(!validate()) {
-        event.preventDefault();
+    contactForm.addEventListener("submit", (event) => {
 
-        inputList.forEach(input => {
+        if(!validate()) {
+            event.preventDefault();
 
-            let errorMessage = getFirstError(input);
-            let span = input.closest(".form-group").querySelector(".invalid-feedback");
+            inputList.forEach(input => {
 
-            if(hasError(input)) {
-                input.classList.add("is-invalid");
-            } else {
+                let errorMessage = getFirstError(input);
+                let span = input.closest(".form-group").querySelector(".invalid-feedback");
 
-                if(input.classList.contains("is-invalid")) {
-                    // Remove class
-                    input.classList.remove("is-invalid");
+                if(hasError(input)) {
+                    input.classList.add("is-invalid");
+                } else {
+
+                    if(input.classList.contains("is-invalid")) {
+                        // Remove class
+                        input.classList.remove("is-invalid");
+                    }
                 }
-            }
 
-            // Add error message
-            span.innerHTML = errorMessage;
-            
-        });
-        
-        return false;
-    } 
+                // Add error message
+                span.innerHTML = errorMessage;
 
-});
+            });
+
+            return false;
+        } 
+
+    });
+}
 
 /**
  * Check if all input values are correct
@@ -185,14 +190,10 @@ function validate() {
     
                     break;
                 case RULE_NAME:
+
                     if(value) {
 
                         let validRegex = /^[A-Z-\p{L}]+$/i;
-
-                        // On regarde si l'utilisateur a inscrit un nom ou prénom avec plus de 2 caractères
-                        if(value.length < 3) {
-                            addErrorForRule(key, rule);
-                        }
 
                         // On vérifié que le nom ou prénom ne contient que des caractères alphabétiques
                         if(!isValid(validRegex, value)) {
@@ -200,6 +201,17 @@ function validate() {
                         }
                     }
 
+                    break;
+                case RULE_MIN:
+
+                    // On regarde si l'utilisateur a inscrit un nom ou prénom avec plus de 2 caractères
+                    if(value) {
+                        let minChar = 3;
+
+                        if(value.length < minChar) {
+                            addErrorForRule(key, rule, {min: minChar});
+                        }
+                    }
                     break;
                 case RULE_PHONE:
 
@@ -245,22 +257,17 @@ function validate() {
  * @param input The input field
  * @param rule The rule that trigged
  */
-function addErrorForRule(input, rule) {
+function addErrorForRule(input, rule, param = {}) {
     let message = errorMessages[rule];
 
-    switch(input) {
-        case "lastname":
-            message = message.replace("{name}", "nom"); 
-            break;
-        case "firstname":
-            message = message.replace("{name}", "prénom");
-            break;
-        default:
-            break;
-    }
+    Object.entries(param).forEach(([key, value]) => {
+        message = message.replace(`{${key}}`, `${value}`);
+    });
 
     errors[input] = message;
 }
+
+
 
 /**
  * 

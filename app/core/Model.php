@@ -4,7 +4,7 @@ namespace app\core;
 abstract class Model {
 
     public const RULE_REQUIRED = "required";
-    public const RULE_USERNAME = "username";
+    public const RULE_NAME = "name";
     public const RULE_EMAIL = "email";
     public const RULE_MIN = "min";
     public const RULE_MATCH = "match";
@@ -38,34 +38,27 @@ abstract class Model {
             foreach($rules as $rule) {
                 $ruleName = $rule;
 
-                if(is_array($rule)) {
-                    $ruleName = $rule[0];
-                }
-
                 switch($ruleName) {
                     case ($ruleName === self::RULE_REQUIRED && !$value) : 
                         $this->addErrorForRule($attribute, self::RULE_REQUIRED);
                         break;
-                    case ($ruleName === self::RULE_MIN && strlen($value) < $rule['min']) : 
-                        $this->addErrorForRule($attribute, self::RULE_MIN, $rule);
+                    case ($ruleName === self::RULE_NAME) :
+                        if($value) {
+                            if(!preg_match("/^[A-Z-\p{L}]+$/i",$value)) {
+                                $this->addErrorForRule($attribute, self::RULE_NAME);    
+                            }
+                        }
                         break;
-                    case ($ruleName === self::RULE_MATCH && $value !== $this->{$rule['match']}) :
-                        $rule['match'] = $this->getLabel($rule['match']); 
-                        $this->addErrorForRule($attribute, self::RULE_MATCH, $rule);
-                        break;
-                    case ($ruleName === self::RULE_UNIQUE): {
-                            $className = $rule['class'];
-                            $uniqueAttr = $rule['attribute'] ?? $attribute;
-                            $tableName = $className::tableName();
+                    case ($ruleName === self::RULE_MIN) :
 
-                            $sql = "SELECT * FROM $tableName WHERE $uniqueAttr = :attr";
+                        if($value) {
                             
-                            $statement = Application::$app->getDatabase()->prepare($sql);
-                            $statement->bindValue(":attr", $value);
-                            $statement->execute();
-
-                            $record = $statement->fetchObject();
-                            if($record) $this->addErrorForRule($attribute, self::RULE_UNIQUE, ['field' => $this->getLabel($attribute)]);
+                            $minChar = 3;
+                            
+                            if(strlen($value) < $minChar) {
+                                $this->addErrorForRule($attribute, self::RULE_MIN, ["min" => $minChar]);
+                            }
+                            
                         }
                         break;
                     case ($ruleName == self::RULE_EMAIL && !filter_var($value, FILTER_VALIDATE_EMAIL)):
@@ -88,6 +81,12 @@ abstract class Model {
         return empty($this->errors);
     }
 
+    /**
+     * Ajoute le message d'erreur pour l'attribut/champ qui correspond
+     * @param mixed $attribute Le nom de l'attribut/champ
+     * @param mixed $rule Le nom de la règle
+     * @param mixed $params Un tableau de paramètre supplémentaire
+     */
     private function addErrorForRule(string $attribute, string $rule, $params = []) {
         $message = $this->errorMessages()[$rule] ?? '';
         
@@ -102,21 +101,34 @@ abstract class Model {
         $this->errors[$attribute][] = $messages;
     }
 
+    /**
+     * Liste des messages d'erreurs pour chacunes des règles
+     * @return array Retourne le tableau des messages d'erreurs pour chaque règle
+     */
     public function errorMessages() {
         return [
             self::RULE_REQUIRED => 'Champ obligatoire',
+            self::RULE_NAME => 'Ce champ est invalide',
             self::RULE_MIN => 'Ce champ doit contenir au moins {min} caractères',
             self::RULE_MATCH => 'Ce champ doit être identique au champ "{match}"',
-            self::RULE_UNIQUE => 'Cet {field} existe déjà',
             self::RULE_EMAIL => 'Veuillez saisir une adresse e-mail valide',
             self::RULE_PHONE => 'Veuillez saisir un numéro valide'
         ];
     }
 
+    /**
+     * Regarde dans le tableau des erreurs si l'attribut/champ possèdes des erreurs
+     * @param mixed $attribute Attribut qu'on va vérifier
+     * @return mixed Retourne l'erreur pour l'attribut/champ ou false si il n'y en a pas
+     */
     public function hasErrors($attribute) {
         return $this->errors[$attribute] ?? false;
     }
 
+    /**
+     * Recupère la première erreur pour l'attribut/champ
+     * @return mixed Retourne la première erreur de l'attribut/champ , ou false si il n'y en a pas
+     */
     public function getFirstError($attribute) {
         return $this->errors[$attribute][0] ?? false;
     }

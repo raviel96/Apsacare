@@ -3,7 +3,7 @@ namespace app\core;
 
 use PDO;
 
-class Database{
+class Database {
 
     public PDO $pdo;
 
@@ -17,6 +17,11 @@ class Database{
         $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     }   
 
+    /**
+     * Scan the migration folder to get all migration files.
+     * Call the "up()" function of a migration add the migration to the migration table.
+     * If the migration is already in the table, it will not be apply again
+     */
     public function applyMigrations() {
         $this->createMigrationTable();
         $applieMigrations = $this->getAppliedMigrations();
@@ -45,6 +50,9 @@ class Database{
         }
     }
 
+    /**
+     * Create migration table
+     */
     public function createMigrationTable() {
         $sql = "CREATE TABLE IF NOT EXISTS migration(
             id INT AUTO_INCREMENT PRIMARY KEY,
@@ -55,6 +63,10 @@ class Database{
         $this->pdo->exec($sql);
     }
 
+    /**
+     * Get migrations that are already applied
+     * @return mixed Array of all migration
+     */
     public function getAppliedMigrations() {
         $sql = "SELECT migration FROM migration";
 
@@ -64,6 +76,9 @@ class Database{
         return $statement->fetchAll(PDO::FETCH_COLUMN);
     }
 
+    /**
+     * Insert migrations in the table
+     */
     public function saveMigrations(array $migrations) {
         $str = implode(",", array_map(fn($m) => "('$m')", $migrations));
 

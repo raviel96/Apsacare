@@ -1,6 +1,6 @@
 <?php
-
-/** @var \$this app\core\View */ ?>
+/** @var \$this app\core\View */ 
+?>
 <!DOCTYPE html>
 <html lang="fr">
 

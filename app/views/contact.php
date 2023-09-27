@@ -53,12 +53,12 @@ $this->title = "Contact";
                                 </div>
                                 <div class="form-group">
                                     <label for="lastname">Nom *</label>
-                                    <input class="form-control <?php echo $model->hasErrors('lastname') ? 'is-invalid' : ''; ?>" type="text" name="lastname" id="lastname" placeholder="Nom" value="<?php echo $model->lastname ?>">
+                                    <input class="form-control <?php echo $model->hasErrors('lastname') ? 'is-invalid' : ''; ?>" type="text" name="lastname" id="lastname" placeholder="Nom" value="<?php echo $model->lastname ?>" required>
                                     <span class="invalid-feedback"><?php echo $model->getFirstError('lastname'); ?></span>
                                 </div>
                                 <div class="form-group">
                                     <label for="firstname">Prénom *</label>
-                                    <input class="form-control <?php echo $model->hasErrors('firstname') ? 'is-invalid' : ''; ?>" type="text" name="firstname" id="firstname" placeholder="Prénom" value="<?php echo $model->firstname ?>">
+                                    <input class="form-control <?php echo $model->hasErrors('firstname') ? 'is-invalid' : ''; ?>" type="text" name="firstname" id="firstname" placeholder="Prénom" value="<?php echo $model->firstname ?>" required>
                                     <span class="invalid-feedback"><?php echo $model->getFirstError('firstname'); ?></span>
                                 </div>
                                 <div class="form-group">
@@ -68,7 +68,7 @@ $this->title = "Contact";
                                 </div>
                                 <div class="form-group">
                                     <label for="phone">Téléphone *</label>
-                                    <input class="form-control <?php echo $model->hasErrors('phone') ? 'is-invalid' : ''; ?>" type="tel" name="phone" id="phone" placeholder="Téléphone">
+                                    <input class="form-control <?php echo $model->hasErrors('phone') ? 'is-invalid' : ''; ?>" type="tel" name="phone" id="phone" placeholder="Téléphone" required>
                                     <span class="invalid-feedback"><?php echo $model->getFirstError('phone'); ?></span>
                                 </div>
                                 <div class="form-group grid-span-2">
@@ -78,7 +78,7 @@ $this->title = "Contact";
                                 </div>
                             </div>
                             <div class=" form-group legals">
-                                <input class="form-control" type="checkbox" name="legal" id="legal">
+                                <input class="form-control" type="checkbox" name="legal" id="legal" required>
                                 <label for="message">J'ai lu et accepté les <a href="/cgu">mentions légales</a> *</label>
                                 <br><span class="invalid-feedback"><?php echo $model->getFirstError('legal'); ?></span>
                             </div>

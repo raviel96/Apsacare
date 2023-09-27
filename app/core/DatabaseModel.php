@@ -7,8 +7,22 @@ use PDO;
 
 abstract class DatabaseModel extends Model {
     
+    /**
+     * Get the table name
+     * @return string Return the table name
+     */
     abstract public function tableName() :string;
+
+    /**
+     * Get the attributes of the model
+     * @return array Return an array of attributes
+     */
     abstract public function attributes() :array;
+
+    /**
+     * Get the primary key
+     * @return string Return the name of primary key 
+     */
     abstract public function primaryKey() :string;
 
     /**
