@@ -51,7 +51,7 @@ $this->title = "Accompagnement";
         <section id="appui-social">
             <div class="expandable-card">
                 <div class="card-image">
-                    <img src="img/appui-soc.jpg" alt="">
+                    <img src="img/appui-soc.jpg" alt="Image de deux hommes faisant une planification sur un tableau">
                 </div>
                 <div class="card-content">
                     <div>

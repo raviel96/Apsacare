@@ -20,9 +20,11 @@ class ContactController extends Controller {
 
         if($request->isPost()) {
             
+            // Load data from contact form
             $contact->loadData($request->getData());
 
-            if($contact->validate()) {
+            if($contact->validate() && $contact->insert()) {
+                
                 $admin = Application::$app->getAdmin();
                 $mail = new PHPMailer(true);
                 try {

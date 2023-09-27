@@ -13,10 +13,6 @@ $dotenv = Dotenv\Dotenv::createImmutable(dirname(__DIR__));
 $dotenv->load();
 
 $config = [
-    'admin' => [
-        'mail' => $_ENV['ADMIN_MAIL'],
-        'pwd' => $_ENV['ADMIN_PWD']
-    ],
     'db' => [
         'dsn' => $_ENV['DB_DSN'],
         'user' => $_ENV['DB_USER'],
