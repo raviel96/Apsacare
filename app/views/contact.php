@@ -27,7 +27,7 @@ $this->title = "Contact";
             <div class="section-container">
                 <div class="text-center">
                     <h2 class="section-title">Nous <span class="text-highlight">contacter</span></h2>
-                    <img class="title-bottom" src="img/title-bottom.png" width="50">
+                    <img class="title-bottom" src="img/title-bottom.png" alt="" width="50">
                 </div>
                 <div class="contact-container">
                     <div class="form grid-span-2">

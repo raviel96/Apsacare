@@ -27,7 +27,7 @@ $this->title = "Accompagnement";
                 <div class="card-content">
                     <div>
                         <h2 class="section-title"><span class="text-highlight">L'individu</span> au cœur des dispositifs</h2>
-                        <img class="title-bottom" src="img/title-bottom.png" width="50">
+                        <img class="title-bottom" src="img/title-bottom.png" alt="" width="50">
                     </div>
                     <p>APSA CARE accompagne les individus engagés dans des parcours d’Insertion, dans le cadre :</p>
                     <ul class="fa-ul">
@@ -56,7 +56,7 @@ $this->title = "Accompagnement";
                 <div class="card-content">
                     <div>
                         <h2 class="section-title">L'accompagnement <span class="text-highlight">social</span></h2>
-                        <img class="title-bottom" src="img/title-bottom.png" width="50">
+                        <img class="title-bottom" src="img/title-bottom.png" alt="" width="50">
                     </div>
                     <p>Tout individu a des défis à relever et notre défi à nous, est de pouvoir identifier la problématique sociale qui peut venir  freiner l’éclosion du projet professionnel.</p>
                     <p class="margin-top-2">Une fois le frein identifié, nous dressons au bénéficiaire une prescription assortie de conseils et de coordonnées ciblées.
@@ -73,7 +73,7 @@ $this->title = "Accompagnement";
                 <div class="card-content">
                     <div>
                         <h2 class="section-title">L'accompagnement <span class="text-highlight">professionnel</span></h2>
-                        <img class="title-bottom" src="img/title-bottom.png" width="50">
+                        <img class="title-bottom" src="img/title-bottom.png" alt="" width="50">
                     </div>
                     <p>Le service « Emploi Formation » d’APSA CARE aide le bénéficiaire à faire émerger son projet professionnel,
                         et à étudier les contraintes liées à l’emploi visé ; Et à lever les freins éventuels.
@@ -94,7 +94,7 @@ $this->title = "Accompagnement";
                 <div class="card-content">
                     <div>
                         <h2 class="section-title">L'accompagnement <span class="text-highlight">psychologique</span></h2>
-                        <img class="title-bottom" src="img/title-bottom.png" width="50">
+                        <img class="title-bottom" src="img/title-bottom.png" alt="" width="50">
                     </div>
                     <p>Les psychologues qui travaillent en partenariat avec notre association, établissent un profil psychologique du bénéficiaire et mesurent le degré de l’estime qu’il a de lui-même.</p>
                     <p class="margin-top-2">Ces deux paramètres sont importants car ils permettent à l’individu de repérer ce qui a pu empêcher son inclusion dans la société et dans l’entreprise de manière pérenne et accomplie.</p>
