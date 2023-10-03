@@ -783,7 +783,8 @@ h1, h2, h3 {
 }
 
 
-.contact-container .form #submit:hover {
+.contact-container .form #submit:hover,
+.contact-container .form #submit:focus {
     letter-spacing: 1px;
     background-color: var(--clr-primary);
 }
@@ -872,7 +873,8 @@ h1, h2, h3 {
     transition: 0.5s;
 }
 
-.contact-container .contact .contact-info a:hover {
+.contact-container .contact .contact-info a:hover,
+.contact-container .contact .contact-info a:focus {
     transform: translateX(5px);
 }
 
@@ -909,7 +911,8 @@ h1, h2, h3 {
     transition: 0.5s;
 }
 
-.contact-container .contact .contact-social a:hover > i {
+.contact-container .contact .contact-social a:hover > i,
+.contact-container .contact .contact-social a:focus > i {
     transform: scale(1.1);
 }
 
