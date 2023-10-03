@@ -7,7 +7,7 @@ $this->title = "Mentions légales";
     <div class="main-container cgu-main">
         <div class="text-center">
             <h1>Mentions <span class="text-highlight">légales</span></h1>
-            <img class="title-bottom" src="img/title-bottom.png" alt="Image décorative" width="50">
+            <img class="title-bottom" src="img/title-bottom.png" width="50">
         </div>
         <div class="cgu-container">
             <div class="cgu-group">

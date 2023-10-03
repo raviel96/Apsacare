@@ -12,7 +12,7 @@ $this->title = "A propos";
     <div class="main-container">
         <div class="text-center">
             <h2 class="uppercase">Notre <span class="text-highlight">équipe</span></h2>
-            <img class="title-bottom" src="img/title-bottom.png" alt="Image décorative" width="50">
+            <img class="title-bottom" src="img/title-bottom.png" width="50">
         </div>
         <section class="section-about text-center">
             <p>Nous sommes assistés d'un très <a href="/#section-partner">large réseau</a> professionnel et associatif.</p>

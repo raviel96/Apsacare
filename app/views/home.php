@@ -20,7 +20,7 @@ $this->title = "Accueil";
                 <div class="section-content slide-in slide-right">
                     <div>
                         <h2 class="section-title">Notre <span class="text-highlight">vision</span></h2>
-                        <img class="title-bottom" src="img/title-bottom.png" alt="Image décorative" width="50">
+                        <img class="title-bottom" src="img/title-bottom.png" width="50">
                     </div>
                     <p>L’association a été créée en 2008. En 2009, l’opportunité d’accompagner les bénéficiaires de contrats à durée déterminée d’insertion, salariés d’une structure d’insertion par l’activité économique (SIAE) est arrivée.</p>
                     <p class="margin-top-2">Depuis, nous avons fait de l’accompagnement social et professionnel notre activité principale.<br>
@@ -57,7 +57,7 @@ $this->title = "Accueil";
                 <div class="section-content slide-in slide-left">
                     <div>
                         <h2 class="section-title">Notre <span class="text-highlight">expertise</span></h2>
-                        <img class="title-bottom" src="img/title-bottom.png" alt="Image décorative" width="50">
+                        <img class="title-bottom" src="img/title-bottom.png" width="50">
                     </div>
                     <p>L’intervention d’APSA CARE auprès de ses bénéficiaires, se situe au niveau de l’apport d’informations préventives et de la mise en relation avec tous partenaires pouvant aider à la remédiation des problématiques détectées par notre équipe d’experts :</p>
                     <ul class="fa-ul">
@@ -84,7 +84,7 @@ $this->title = "Accueil";
         <section class="section-domain">
             <header>
                 <h2 class="section-title">Nos <span class="text-highlight">domaines</span> d'intervention</h2>
-                <img class="title-bottom" src="img/title-bottom.png" alt="Image décorative" width="50">
+                <img class="title-bottom" src="img/title-bottom.png" width="50">
             </header>
             <div class="section-container card-container">
                 <a href="/accompagnement#appui-social" class="card">
@@ -130,7 +130,7 @@ $this->title = "Accueil";
         <section class="section-mission">
             <header>
                 <h2 class="section-title">Nos <span class="text-highlight">missions</span></h2>
-                <img class="title-bottom" src="img/title-bottom.png" alt="Image décorative" width="50">
+                <img class="title-bottom" src="img/title-bottom.png" width="50">
             </header>
             <div class="section-container">
                 <div class="section-content">
@@ -156,7 +156,7 @@ $this->title = "Accueil";
         <section id="section-partner" class="section-partner">
             <header>
                 <h2 class="section-title">Notre réseau de <span class="text-highlight">partenaire</span></h2>
-                <img class="title-bottom" src="img/title-bottom.png" alt="Image décorative" width="50">
+                <img class="title-bottom" src="img/title-bottom.png" width="50">
             </header>
             <div class="section-container">
                 <p>APSA CARE travaille en collaboration avec un riche éventail de partenaires variés et diversifiés afin de pouvoir répondre au mieux aux problématiques des bénéficiaires.</p>
