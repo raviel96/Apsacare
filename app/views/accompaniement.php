@@ -51,7 +51,7 @@ $this->title = "Accompagnement";
         <section id="appui-social">
             <div class="expandable-card">
                 <div class="card-image">
-                    <img src="img/appui-soc.jpg" alt="Image de deux hommes faisant une planification sur un tableau">
+                    <img src="img/appui-soc.jpg" alt="Deux hommes faisant une planification sur un tableau">
                 </div>
                 <div class="card-content">
                     <div>
@@ -89,7 +89,7 @@ $this->title = "Accompagnement";
         <section id="appui-psychologique">
             <div class="expandable-card">
                 <div class="card-image">
-                    <img src="img/appui-psy.jpg" alt="Image de pierres entassés près de la mer">
+                    <img src="img/appui-psy.jpg" alt="Pierres entassés près de la mer">
                 </div>
                 <div class="card-content">
                     <div>

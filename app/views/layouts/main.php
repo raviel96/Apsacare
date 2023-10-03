@@ -58,7 +58,6 @@
                                 <li><a href="/formation">Nos formations</a></li>
                                 <li><a href="/a-propos">Nous connaître</a></li>
                                 <li><a href="/contact">Nous contacter</a></li>
-                                <!-- <li><a href="/connexion">Se connecter</a></li> -->
                             </ul>
                         </nav>
                     </div>
