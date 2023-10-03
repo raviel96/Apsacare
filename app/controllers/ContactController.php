@@ -24,7 +24,6 @@ class ContactController extends Controller {
             $contact->loadData($request->getData());
 
             if($contact->validate() && $contact->insert()) {
-                
                 $admin = Application::$app->getAdmin();
                 $mail = new PHPMailer(true);
                 try {
