@@ -7,7 +7,6 @@ use Exception;
 
 class Application {
 
-    public string $userClass;
     public string $layout = "main";
     public static string $ROOT_DIR;
     public static Application $app;

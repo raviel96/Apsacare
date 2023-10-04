@@ -34,6 +34,7 @@ class Router {
         $method = $this->request->getMethod();
         $callback = $this->routes[$method][$path] ?? false;
 
+        // Si la route demandé est une route interdite, on affiche une page d'erreur
         if(in_array($path, $this->forbiddenRoutes)) {
             throw new AccessDeniedException();
         }
@@ -54,7 +55,6 @@ class Router {
             Application::$app->setController($callback[0]);
             Application::$app->getController()->setAction($callback[1]); 
         }
-
 
         return call_user_func($callback, $this->request, $this->response);
     } 
