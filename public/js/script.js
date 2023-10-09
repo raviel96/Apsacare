@@ -178,7 +178,6 @@ function validate() {
             
         });
         
-
         rules[key].forEach(rule => {
 
             switch(rule) {
@@ -267,8 +266,6 @@ function addErrorForRule(input, rule, param = {}) {
 
     errors[input] = message;
 }
-
-
 
 /**
  * 

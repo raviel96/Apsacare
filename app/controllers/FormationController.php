@@ -5,8 +5,7 @@ use app\core\Controller;
 
 class FormationController extends Controller {
 
-    public function index() {
-        
+    public function index() {    
         return $this->render("formation");
     }
 }

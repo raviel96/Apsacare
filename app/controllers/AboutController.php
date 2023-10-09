@@ -5,8 +5,7 @@ use app\core\Controller;
 
 class AboutController extends Controller {    
     
-    public function index() {
-        
+    public function index() {    
         return $this->render("about");
     }
 }
