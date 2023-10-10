@@ -35,6 +35,11 @@ class Application {
         $this->admin = new Admin($config['admin'] ?? []);
     }
 
+
+	/**
+	 * Call the resolve method of the router and run the application. 
+	 * Can throw exception if the router didn't find the path.
+	 */
     public function run() {
         try {
             echo $this->router->resolve();

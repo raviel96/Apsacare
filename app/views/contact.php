@@ -31,7 +31,10 @@ $this->title = "Contact";
                 </div>
                 <div class="contact-container">
                     <div class="form grid-span-2">
-                        <h3>Envoyer un message</h3>
+                        <div class="form-head">
+                            <h3>Envoyer un message</h3>
+                            <p>* champs obligatoires</p>
+                        </div>
                         <form id="contact-form" action="/contact" method="post">
                             <div class="form-container">
                                 <div class="form-group">

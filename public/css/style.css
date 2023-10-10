@@ -758,7 +758,14 @@ h1, h2, h3 {
 
 .contact-container h3 {
     color: var(--clr-accent-secondary);
+}
+
+.contact-container .form-head {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-2);
     margin-bottom: var(--margin-2);
+    color: var(--clr-accent-secondary);
 }
 
 .contact-container .form {
@@ -846,6 +853,10 @@ h1, h2, h3 {
 .contact-container .contact {
     padding: var(--padding-3);
     background-color:  rgba(60, 138, 190, 0.5);
+}
+
+.contact-container .contact h3 {
+    margin-bottom: var(--margin-2);
 }
 
 .contact-container .contact .contact-info {
@@ -969,7 +980,15 @@ h1, h2, h3 {
 
     .grid-span-2 {
         grid-column: span 2;
-    } 
+    }
+    
+    .contact-container .form-head {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 0;
+    }
 
     .contact-container .contact .contact-info .fa-location-dot {
         width: 3.125rem;

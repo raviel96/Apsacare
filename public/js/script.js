@@ -83,7 +83,7 @@ scrollToTop.addEventListener("click", () => {
     window.scrollTo({
         top: 0
     });
-})
+});
 
 hamburgerBars.addEventListener("click", () => {
     mobileNav.classList.toggle("showing");

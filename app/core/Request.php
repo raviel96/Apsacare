@@ -19,6 +19,11 @@ class Request {
         return strtolower($_SERVER['REQUEST_METHOD']);
     }
 
+
+    /**
+     * Récupère les paramètres des requêtes GET ou POST
+     * @return array Retourne un tableau des valeurs récupérées
+     */
     public function getData() {
         $data = [];
 
@@ -36,6 +41,7 @@ class Request {
         return $data;
     }
 
+    
     public function isGet() {
         return $this->getMethod() == "get";
     }

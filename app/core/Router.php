@@ -27,6 +27,13 @@ class Router {
         $this->routes['post'][$path] = $callback;
     }
 
+    /**
+     * This method render a view and call a controller method.
+     * Get the requested path and try to render the view. If the path does not exist, an exception will be returned.
+     * If the requested path is forbidden, an exception will be returned.
+     * If a controller method was set, try to execute it.
+     * @return mixed Return the rendered view or exception.
+     */
     public function resolve() {
         // On récupère le path et la méthode
         // Ensuite on vérifie si la route existe

@@ -12,6 +12,11 @@ class Controller {
         $this->layout = $layout;
     }
 
+    /**
+     * Render a view.
+     * @param mixed $view View file to render
+     * @param mixed $params Additional parameters
+     */
     public function render($view, $params = []) {
         return Application::$app->getView()->renderView($view, $params);
     }

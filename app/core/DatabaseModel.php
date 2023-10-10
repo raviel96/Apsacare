@@ -46,9 +46,9 @@ abstract class DatabaseModel extends Model {
                 $statement->bindParam(":$attribute", $this->{$attribute});
             }
 
-            $statement->execute();
+            
 
-            return true;
+            return $statement->execute();
         }catch(Exception $e) {
             return false;
         }    
@@ -73,9 +73,9 @@ abstract class DatabaseModel extends Model {
                 $statement->bindParam(":$key", $value);
             }
 
-            $statement->execute();
+            
 
-            return true;
+            return $statement->execute();
         }catch(Exception $e) {
             return false;
         }
@@ -107,9 +107,9 @@ abstract class DatabaseModel extends Model {
 
             $statement->bindParam(":id", $id);
 
-            $statement->execute();
+            
 
-            return true;
+            return $statement->execute();
         }catch(Exception $e) {
             return false;
         }
