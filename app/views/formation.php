@@ -15,7 +15,7 @@ $this->title = "Formations";
             <img class="title-bottom" src="img/title-bottom.png" alt="" width="50">
         </div>
         <div class="formation-container">
-            <p class="text-center"><strong>Aucunes formations disponibles pour le moment.</strong></p>
+            <p class="text-center"><strong>Aucune formation disponible pour le moment.</strong></p>
         </div>
     </div>
 </main>
