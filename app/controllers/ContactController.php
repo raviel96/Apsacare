@@ -12,8 +12,6 @@ use PHPMailer\PHPMailer\PHPMailer;
 
 class ContactController extends Controller {
 
-    public const SEND_TO = "meldoune971@gmail.com";
-
     public function contact(Request $request, Response $response) {
        
         $contact = new Contact();
@@ -86,7 +84,7 @@ class ContactController extends Controller {
                         $mail->setFrom($contact->email, "ApsaCare");
                         $mail->addReplyTo($contact->email);
                     }
-                    $mail->addAddress(self::SEND_TO);
+                    $mail->addAddress($admin->getAdminMail());
 
                     $mail->isHTML(true);
                     $mail->Subject = $subject;
