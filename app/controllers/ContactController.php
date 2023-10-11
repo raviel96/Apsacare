@@ -84,6 +84,7 @@ class ContactController extends Controller {
                         $mail->setFrom($contact->email, "ApsaCare");
                         $mail->addReplyTo($contact->email);
                     }
+                    
                     $mail->addAddress($admin->getAdminMail());
 
                     $mail->isHTML(true);
