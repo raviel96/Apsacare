@@ -14,8 +14,33 @@ $this->title = "Formations";
             <h1>Nos <span class="text-highlight">formations</span></h1>
             <img class="title-bottom" src="img/title-bottom.png" alt="" width="50">
         </div>
-        <div class="formation-container">
-            <p class="text-center"><strong>Aucune formation disponible pour le moment.</strong></p>
+        <!-- <div class="formation-container">
+            <div class="filter-container">
+                <div class="filter">
+                    <ul>
+                        <li>
+                            <p>Domaines</p>
+                            <button></button>
+                        </li>
+                        <li>
+                            <p>Durée</p>
+                            <button></button>
+                        </li>
+                    </ul>
+                </div>
+            </div> -->
+            <div class="course-container">
+                <?php if(!empty($courses)): ?>
+                    <?php foreach($courses as $course):?>
+                        <div class="card course" data-id="<?php echo $course->id ?>">
+                            <p class="course-category"><?php echo $course->getCategory($course->categoryId) ?></p>
+                            <h2 class="course-title"><?php echo $course->title ?></h2>
+                        </div>
+                    <?php endforeach; ?>
+                <?php else: ?>
+                    <p class="text-center"><strong>Aucune formation disponible pour le moment.</strong></p>
+                <?php endif; ?>
+            </div>
         </div>
     </div>
 </main>

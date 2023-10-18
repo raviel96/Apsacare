@@ -54,8 +54,4 @@ class Contact extends DatabaseModel {
             'legal' => [self::RULE_REQUIRED],
         ];
     }
-
-    public function __destruct() {
-        
-    }
 }

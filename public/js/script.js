@@ -1,4 +1,3 @@
-
 const RULE_REQUIRED = "required";
 const RULE_PHONE = "phone";
 const RULE_EMAIL = "email";
@@ -72,6 +71,7 @@ const appearOnScroll = new IntersectionObserver((entries, appearOnScroll) => {
         appearOnScroll.unobserve(entry.target);
     });
 }, observerOptions); 
+
 
 
 window.addEventListener("scroll", () => {

@@ -76,7 +76,7 @@ class ContactController extends Controller {
                     $mail->Host = "smtp.gmail.com";
                     $mail->SMTPAuth = true;
                     $mail->Username = $admin->getAdminMail();
-                    $mail->Password = $admin->getAdminPwd();
+                    $mail->Password = $admin->getAdminMailPwd();
                     $mail->SMTPSecure = "tls";
                     $mail->Port = 587;
 

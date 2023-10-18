@@ -21,6 +21,10 @@ class Controller {
         return Application::$app->getView()->renderView($view, $params);
     }
 
+    public function renderOneView($view, $params = []) {
+        return Application::$app->getView()->renderOnlyView($view, $params);
+    }
+
     public function getAction(): string {
 		return $this->action;
 	}

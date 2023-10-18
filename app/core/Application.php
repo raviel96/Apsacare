@@ -3,10 +3,13 @@
 namespace app\core;
 
 use app\models\Admin;
+use app\models\User;
 use Exception;
+use PDOException;
 
 class Application {
 
+	public string $userClass;
     public string $layout = "main";
     public static string $ROOT_DIR;
     public static Application $app;
@@ -18,9 +21,11 @@ class Application {
     private Database $database;
     private View $view;
 	private Admin $admin;
+	private ?User $user;
     
     
     public function __construct($rootPath, array $config) {
+		$this->userClass = $config['user'];
         
         self::$ROOT_DIR = $rootPath;
         self::$app = $this;
@@ -33,6 +38,15 @@ class Application {
 
         $this->database = new Database($config['db'] ?? []);
         $this->admin = new Admin($config['admin'] ?? []);
+
+		$primaryValue = $this->session->get('user');
+
+        if($primaryValue) {
+            $primaryKey = (new $this->userClass)->primaryKey();
+            $this->user = (new $this->userClass)->findOne([$primaryKey => $primaryValue]);
+        } else {
+            $this->user = null;
+        }
     }
 
 
@@ -44,9 +58,28 @@ class Application {
         try {
             echo $this->router->resolve();
         } catch(Exception $e) {
-            $this->response->setStatusCode($e->getCode());
-            echo $this->view->renderOnlyView("_error", ['exception' => $e]);
-        }
+            $this->response->setStatusCode((int)$e->getCode());
+			// echo $this->view->renderOnlyView("_error", ['exception' => $e]);
+        } 
+    }
+
+	public function login(DatabaseModel $user) {
+        $this->user = $user;
+        $primaryKey = $user->primaryKey();
+        $primaryValue = $user->{$primaryKey};
+        
+        $this->session->set('user', $primaryValue);
+
+        return true;
+    }
+
+	public function logout() {
+        $this->user = null;
+        $this->session->remove('user');
+    }
+
+    public static function isConnected() {
+        return self::$app->user;
     }
 
     /**
@@ -107,6 +140,14 @@ class Application {
 	
 	public function setView(View $view) {
 		$this->view = $view;
+	}
+
+	public function getUser(): ?User {
+		return $this->user;
+	}
+	
+	public function setUser(?User $user) {
+		$this->user = $user;
 	}
 
 	public function getAdmin() {

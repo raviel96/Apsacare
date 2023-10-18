@@ -40,7 +40,7 @@ class Router {
         $path = $this->request->getPath();
         $method = $this->request->getMethod();
         $callback = $this->routes[$method][$path] ?? false;
-
+        
         // Si la route demandé est une route interdite, on affiche une page d'erreur
         if(in_array($path, $this->forbiddenRoutes)) {
             throw new AccessDeniedException();

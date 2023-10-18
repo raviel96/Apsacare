@@ -9,7 +9,7 @@ $dotenv->load();
 $config = [
     'admin' => [
         'mail' => $_ENV['ADMIN_MAIL'],
-        'pwd' => $_ENV['ADMIN_PWD']
+        'mail_pwd' => $_ENV['ADMIN_MAIL_PWD']
     ],
     'db' => [
         'dsn' => $_ENV['DB_DSN'],

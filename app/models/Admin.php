@@ -5,11 +5,11 @@ namespace app\models;
 class Admin {
     
     private string $adminMail = "";
-    private string $adminPwd = "";
+    private string $adminMailPwd = "";
 
     public function __construct(array $config) {
         $this->setAdminMail($config['mail'] ?? "");
-        $this->setAdminPwd($config['pwd'] ?? "");
+        $this->setAdminMailPwd($config['mail_pwd'] ?? "");
     }
 
 	public function getAdminMail(): string {
@@ -20,11 +20,11 @@ class Admin {
 		$this->adminMail = $adminMail;
 	}
 
-	public function getAdminPwd(): string {
-		return $this->adminPwd;
+	public function getAdminMailPwd(): string {
+		return $this->adminMailPwd;
 	}
 	
-	public function setAdminPwd(string $adminPwd){
-		$this->adminPwd = $adminPwd;
+	public function setAdminMailPwd(string $adminMailPwd){
+		$this->adminMailPwd = $adminMailPwd;
 	}
 }

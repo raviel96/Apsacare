@@ -4,6 +4,7 @@ namespace app\core;
 
 use Exception;
 use PDO;
+use PDOException;
 
 abstract class DatabaseModel extends Model {
     
@@ -45,12 +46,9 @@ abstract class DatabaseModel extends Model {
             foreach($attributes as $attribute) {
                 $statement->bindParam(":$attribute", $this->{$attribute});
             }
-
-            
-
             return $statement->execute();
         }catch(Exception $e) {
-            return false;
+            throw $e;
         }    
     }
 
@@ -70,14 +68,12 @@ abstract class DatabaseModel extends Model {
             $statement = self::prepare($sql);
 
             foreach($where as $key => $value) {
-                $statement->bindParam(":$key", $value);
+                $statement->bindValue(":$key", $value);
             }
-
             
-
             return $statement->execute();
         }catch(Exception $e) {
-            return false;
+            throw $e;
         }
     
     }
@@ -101,17 +97,18 @@ abstract class DatabaseModel extends Model {
 
             $statement = self::prepare($sql);
 
-            foreach($set as $key => $value) {
-                $statement->bindParam(":$key", $value);
-            }
-
             $statement->bindParam(":id", $id);
+
+            foreach($set as $key => $value) {
+                $statement->bindValue(":$key", $value);
+            }
 
             
 
+            echo $sql;
             return $statement->execute();
         }catch(Exception $e) {
-            return false;
+            throw $e;
         }
     
     }
@@ -125,7 +122,7 @@ abstract class DatabaseModel extends Model {
     public function findOne(array $where) {
         try{
             $tableName = $this->tableName();
-
+            
             $attributes = array_keys($where);
             $sql = "SELECT * FROM $tableName WHERE " 
                     .implode(" AND ",array_map(fn($attr) => "$attr = :$attr", $attributes));
@@ -135,12 +132,12 @@ abstract class DatabaseModel extends Model {
             foreach($where as $key => $value) {
                 $statement->bindParam(":$key", $value);
             }
-
+            
             $statement->execute();
 
-            return $statement->fetchObject(static::class);
-        }catch(Exception $e) {
-            return false;
+            return $statement->fetchObject(static::class) ?? [];
+        }catch(PDOException $e) {
+            throw $e;
         }
         
     }
@@ -151,6 +148,7 @@ abstract class DatabaseModel extends Model {
      */
     public function findAll() {
         try{
+
             $tableName = $this->tableName();
         
             $sql = "SELECT * FROM $tableName";
@@ -159,9 +157,9 @@ abstract class DatabaseModel extends Model {
 
             $statement->execute();
 
-            return $statement->fetchObject(static::class);
+            return $statement->fetchAll(PDO::FETCH_CLASS, static::class);
         }catch(Exception $e) {
-            return false;
+            throw $e;
         }
     }
 

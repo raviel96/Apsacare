@@ -3,6 +3,7 @@ namespace app\core;
 class Request {
 
     public function getPath() {
+        
         // Si REQUEST_URI n'est pas présent, alors le path sera la page d'accueil
         $path = $_SERVER['REQUEST_URI'] ?? "/";
 
@@ -11,7 +12,7 @@ class Request {
         if(!$position) {
             return $path;
         }
-        
+
         // Si on trouve un ?, alors on récupère uniquement ce qui se trouve avant pour avoir le chemin correct
         return substr($path, 0, $position);
     }
@@ -19,6 +20,15 @@ class Request {
         return strtolower($_SERVER['REQUEST_METHOD']);
     }
 
+    public function getParams() {
+        $url = $_SERVER['REQUEST_URI'] ?? "";
+        $params = [];
+        $queryStr = parse_url($url, PHP_URL_QUERY);
+
+        parse_str($queryStr, $params);
+        
+        return $params;
+    }
 
     /**
      * Récupère les paramètres des requêtes GET ou POST
