@@ -15,7 +15,6 @@ class Contact extends DatabaseModel {
     public string $email = "";
     public string $phone = "";
     public string $message = "";
-    public bool $legal = false;
 
 
     public function tableName(): string {
@@ -51,7 +50,7 @@ class Contact extends DatabaseModel {
             'lastname' => [self::RULE_REQUIRED, self::RULE_NAME, self::RULE_MIN],
             'firstname' => [self::RULE_REQUIRED,self::RULE_NAME, self::RULE_MIN],
             'phone' => [self::RULE_REQUIRED, self::RULE_PHONE],
-            'legal' => [self::RULE_REQUIRED],
+            'message' => [self::RULE_REQUIRED],
         ];
     }
 }

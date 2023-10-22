@@ -74,15 +74,10 @@ $this->title = "Contact";
                                     <span class="invalid-feedback"><?php echo $model->getFirstError('phone'); ?></span>
                                 </div>
                                 <div class="form-group grid-span-2">
-                                    <label for="message">Message</label>
-                                    <textarea class="form-control <?php echo $model->hasErrors('message') ? 'is-invalid' : ''; ?>" name="message" id="message" placeholder="Votre message..."><?php echo $model->message ?></textarea>
+                                    <label for="message">Message *</label>
+                                    <textarea class="form-control <?php echo $model->hasErrors('message') ? 'is-invalid' : ''; ?>" name="message" id="message" placeholder="Votre message..." required><?php echo $model->message ?></textarea>
                                     <span class="invalid-feedback"><?php echo $model->getFirstError('message'); ?></span>
                                 </div>
-                            </div>
-                            <div class=" form-group legals">
-                                <input class="form-control" type="checkbox" name="legal" id="legal" required>
-                                <label for="message">J'ai lu et accepté les <a href="/cgu">mentions légales</a> *</label>
-                                <br><span class="invalid-feedback"><?php echo $model->getFirstError('legal'); ?></span>
                             </div>
                             <input type="submit" name="submit" id="submit" value="Envoyer">
                         </form>
